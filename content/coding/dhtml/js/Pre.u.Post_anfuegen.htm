@@ -1,0 +1,93 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+<!--
+/* JavaScript-Code */
+
+var cntChar;
+
+function getZeilen(feld)
+{
+	var ZAnzahl=1;
+
+	cntChar = document.forms[0].txtInput.value.length;
+
+	for(i=0;i<cntChar;i++)
+	if (feld.value.charAt(i) == "\n")  
+		ZAnzahl++;
+
+//	document.forms[0].txtOutput.value += "Anzahl Zeilen: "+ZAnzahl+"\n";
+
+	return ZAnzahl;
+}
+
+function Generate()
+{ 
+	var Inhalt=document.forms[0].txtInput;
+	var chrPre,chrPost,Zeilen,i=0,j=0;
+
+	Zeilen = getZeilen(Inhalt);	
+	chrInput = new Array(Zeilen);
+
+	chrPre = document.forms[0].txtPrefix.value;
+	chrPost = document.forms[0].txtPostfix.value;
+
+//	if (document.forms[0].txtInput.value.length>0)
+	while(i<cntChar) //Solange nicht alle Zeichen durch sind
+	{
+
+	if (Inhalt.value.charAt(i) == "\n") {
+		//Ausgabe des Inhalts
+		document.forms[0].txtOutput.value += chrPre + chrInput[j] + chrPost + "\n";
+		j++;
+		i++; //Zeilenumbruch überspringen
+		}
+	if (chrInput[j]==undefined)
+		chrInput[j] = Inhalt.value.charAt(i);
+	else
+		chrInput[j] += Inhalt.value.charAt(i);
+
+	i++;
+	}
+
+	//document.forms[0].txtOutput.value +=  + "\n";
+}
+
+//-->
+</script>
+</head>
+
+<body>
+<form>
+<table border=0 width="800">
+  <tr>
+    <td width="50%">Prefix</td>
+    <td width="50%">Postfix</td>
+  </tr>
+  <tr>
+    <td><input type="text" name="txtPrefix" size="16"> </td>
+    <td><input type="text" name="txtPostfix" size="16"> </td>
+  </tr>
+  <tr><td colspan="2">
+<br>Input<br>
+<textarea name="txtInput" cols="62" rows="8"></textarea>
+<br><font color="red">Absatz nach letzter Zeile nicht vergessen!<br></font>
+  </td></tr>
+
+  <tr><td colspan="2">
+    <br><input type="button" name="DoIt" value="Genereate" onclick="javascript:Generate();">
+    <input type="button" name="Del" value="Clear" onclick="javascript:document.forms[0].txtOutput.value='';">
+ <!--<input type="button" name="test" value="Gib Zeilen!"onclick="getZeilen(document.forms[0].txtInput);">-->
+  </td></tr>
+
+  <tr><td colspan="2">
+<br>Output<br>
+<textarea name="txtOutput" cols="62" rows="24"></textarea>
+  </td></tr>
+
+</table>
+</form>
+</body>
+</html>

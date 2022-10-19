@@ -1,0 +1,157 @@
+<html>
+
+<head>
+<title>World Racing</title>
+<link rel="stylesheet" type="text/css" href="../def.css">
+<script src="../js/all.js" type="text/javascript"></script>
+<style type="text/css">
+#divCarListButton
+{
+    padding:4px 0px;
+    width:310px;
+    display:block;
+    height:30px;
+    vertical-align:top;
+    text-align:center;
+    /*background:#061F3E;*/
+    background:#161616;
+    border-width:1px;
+    border-style:solid;
+    border-color:#0C3C5C;
+    
+    border-radius:24px 4px 0px 0px;
+}
+
+/*#divCarListButton img
+{
+    background:transparent;
+    box-shadow:4px 4px 4px black;
+}*/
+
+#divCarList
+{
+    margin:0px;
+    padding:0px;
+    width:310px;
+    display:block;
+    min-height:1px;
+    max-height:80px;
+    overflow:auto;
+    vertical-align:top;
+    text-align:left;
+    /*background:#061F3E;*/
+    background:#161616;
+    border-width:1px;
+    border-style:outset;
+    border-color:#0C3C5C;
+    empty-cells:show;
+    
+    border-radius:0px 0px 24px 4px;
+}
+</style>
+</head>
+
+<body bgcolor="#00000">
+<p align="center"><img src="img/mbwrban.jpg" class="td"></p>
+<p>Hier finden Sie weitere phantastische Autos zu einem phantastischen Spiel von <img src="../nice2/synetic.jpg"> mit &uuml;berw&auml;ltigenden Strecken, die in riesengroßen Szenarien wie Australien, Nevada und Mexiko zu finden sind.
+<p>
+<table width="100%" style="border-collapse:collapse;table-layout:fixed">
+  <tr>
+    <td style="width:320px;padding-bottom:20px">
+      <div id="divCarListButton" onmouseover="this.style.borderStyle='outset'" onmouseout="this.style.borderStyle='solid'" onmousedown="this.style.borderStyle='inset'" onmouseup="this.style.borderStyle='outset'">
+          <img src="img/cars.gif" id="carListButton" class="hand" onclick="openList(document.getElementById('carList'))" 
+                onmousedown="this.src='img/cars-a.gif'" onmouseup="this.src='img/cars-h.gif'"
+                onmouseover="this.src='img/cars-hf.gif'" onmouseout="this.src='img/cars.gif'">
+          <img src="img/cars-h.gif" style="display:none">
+          <img src="img/cars-a.gif" style="display:none">
+      </div>
+      <div id="divCarList">
+          <ul id="carList" style="list-style-type:none;margin:0px;padding-left:10px">
+            <li><img src="img/bmw.png" style="padding-left:2px;padding-right:2px;"> <a target="_self" href="cars/bmw3c.htm">BMW 325ci Cabriolet</a></li>
+            <li><img src="img/bmw.png" style="padding-left:2px;padding-right:2px;"> <a target="_self" href="cars/bmw3c-se.htm">BMW 325ci SE Cabriolet</a></li>
+            <li><img src="img/bmw.png" style="padding-left:2px;padding-right:2px;"> <a target="_self" href="cars/bmwz4.htm">BMW Z4 3.0i</a></li>
+            <li><img src="img/opel.png" style="padding-left:0px;padding-right:1px;"> <a target="_self" href="cars/astrac.htm">Opel Astra Cabriolet (Steinmetz)</a></li>
+          </ul>
+
+      </div>
+          <table id="carList2" style="display:none;border:1px solid red;margin:0px;padding-left:20px">
+            <tr>
+              <td><a target="_self" href="cars/bmw3c.htm">BMW 325ci Cabriolet</a></td>
+            </tr>
+            <tr>
+              <td><a target="_self" href="cars/bmw3c-se.htm">BMW 325ci SE Cabriolet</a></td>
+            </tr>
+            <tr>
+              <td><a target="_self" href="cars/bmwz4.htm">BMW Z4 3.0i</a></td>
+            </tr>
+            <tr>
+              <td><a target="_self" href="cars/astrac.htm">Opel Astra Cabriolet (Steinmetz)</a></td>
+            </tr>
+          </table>
+      
+      <script type="text/javascript">initList(document.getElementById('carList'));</script>
+    </td>
+    <td valign="top" style="padding-top:14px">
+        Laden Sie sich für das Spiel neue Autos von hier herunter.<p></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="cartut.htm">Add-On Cars Dokumentation</a></td>
+    <td>Aufgrund der dringenden Notwendigkeit finden Sie hier Tipps und Hinweise, was beim Erstellen eines Add-On Cars f&uuml;r WorldRacing alles zu beachten ist. 
+    </td>
+  </tr>
+</table>
+<br>
+<img src="img/tools.gif"><br><br>
+<table class="tbl">
+  <tr>
+    <td class="tblbalken">MBWR CarManager by Ortwin
+  </td>
+  <tr>
+  <td class="td">
+Ein kleines von mir geschriebenes Programm, mit dem Sie mit ein paar Mausklicks Ihre Add-On Cars verwalten k&ouml;nnen. Aufgrund von Userw&uuml;nschen k&ouml;nnen Sie seit Version 1.2 auch Favoriten verwalten.<br><br>
+Mit <a href="carmgr13beta.zip">CarManager 1.3</a> lassen sich die Autos aktivieren, ohne sie vorher mit einem abgeschlossenen Rennen freizuschalten. Diese Version befindet sich allerdings noch in der Beta-Phase.<br><br>
+Auf manchen PC's sind bestimmte DLL's nicht vorhanden, die der CarManager ben&ouml;tigt. Diese bekommen Sie <a href="carmgr_dll.zip">hier</a>.<p align="center">
+ <a href="carmgr.zip">CarManager downloaden</a>
+  </td>
+  </tr>
+  <tr><td width="100%"><br><!--Leerzeile--></td></tr>
+  <tr>
+    <td class="tblbalken"><a name="syn">SYN Extractor by Krom</a>
+  </td>
+  <tr>
+  <td class="td">
+Mit diesem Tool k&ouml;nnen Sie die SYN-Dateien einsehen und extrahieren. Sie sind notwendig, um an interne Daten zu gelangen.<p align="center">
+ <a href="wrsynex06.rar">SYN-Extractor downloaden</a>
+  </td>
+  </tr>
+  <tr><td width="100%"><br><!--Leerzeile--></td></tr>
+  <tr>
+    <td class="tblbalken"><a name="ptx">PTX-Tool by Krom</a>
+  </td>
+  <tr>
+  <td class="td">
+Mit diesem Programm lassen sich bmp oder tga-Dateien mit Alpha-Kanal zu PTX-Dateien konvertieren, die das Spiel als Texturformat ben&ouml;tigt.<p align="center">
+ <a href="wrptxtool06b.rar">PTX-Tool downloaden</a>
+  </tr>
+  <tr><td width="100%"><br><!--Leerzeile--></td></tr>
+  <tr>
+    <td class="tblbalken"><a name="mtk"><b>Mesh Tool Kit by Krom</a>
+  </td>
+  <tr>
+  <td class="td">
+Im Mesh Tool Kit sind schon mehrere Tools in einem Programm enthalten. Es kann mox-zu-lwo, col-zu-lwo und beide umgekehrt konvertieren. Des weiteren k&ouml;nnen die mtl-Dateien, in denen die Materialien des Wagens enthalten sind, leicht bearbeitet werden. Leider gibt es noch ein paar Bugs, die das Konvertieren etwas umst&auml;ndlich machen.<p align="center">
+ <a href="wrmtkit13.rar">Mesh Tool Kit downloaden</a>
+  </tr>
+  <tr><td width="100%"><br><!--Leerzeile--></td></tr>
+  <tr>
+    <td class="tblbalken"><a name="car">EditCar by Krom</a>
+  </td>
+  <tr>
+  <td class="td">
+Hiermit lassen sich die Fahreigenschaften und benutzerdefinierten Einstellungen eines Autos bearbeiten. <p align="center">
+ <a href="wretitcar07g.rar">EditCar downloaden</a>
+  </tr>
+</table>
+</body>
+</html>

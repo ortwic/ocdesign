@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>DHTML & JavaScripts</title>
+<link rel="stylesheet" type="text/css" href="../def.css">
+<script src="../js/all.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+<h2>DHTML & JavaScripts</h2>
+<p>Dieser Bereich enthält viele mehr oder minder aufwendige/nützliche DHTML-Seiten oder JavaScripts. 
+    Zum Teil werden diese nicht mehr weiter gepflegt.
+</p>
+  
+<table class="tbl" width="100%">
+  <tr>
+    <td class="tblbalken">
+      <a name="csg">debug.js</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="td">
+      <p>
+      Bei der Entwicklung von Webapplikationen ist es oft hilfreich, schnell mal irgendwelche
+      Variablen ausgeben zu lassen. Früher hat man sich gerne mit alert() beholfen. Moderne Browser
+      unterstützen mittlerweile console.log() und haben sogar für Entwickler vorgesehene Toolleisten,
+      mit denen sich hervorragend arbeiten lässt.
+      </p>
+      <p>
+      Eigentlich ist dieses Script daher obsolet. Denoch ist es nützlich und ich verwende es nach wie 
+      vor gerne. Außerdem kann mein Script sogar rekursiv Objekte ausgeben.
+      </p>
+      <p align="center">
+        <a href="dhtml/debug.html" target="_self">Demo testen...</a>
+      </p>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="tbl" width="100%">
+  <tr>
+    <td class="tblbalken">
+      <a name="csg">CueSheetGenerator</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="td">
+      Manchmal ist es echt nervig, in langen DJ Mixsets wie auf einem klassischen Tape "herum spulen" zu müssen. 
+      Deshalb habe ich mir dieses kleine Script geschrieben, das mir automatisch anhand einer Tracklist 
+      CueSheets generiert. Natürlich sind sie nicht akkurat, aber es bietet einen gewissen Komfort auf einen Blick
+      alle Tracks mit Namen auswählen zu können. Das ganze wurde mit Hilfe von Regulären Ausdrücken realisiert.
+      <p align="center">
+        <a href="dhtml/CueSheetGenerator/cuegenerator.html" target="_self">Zum CueSheetGenerator...</a></p>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="tbl" width="100%">
+  <tr>
+    <td class="tblbalken">
+      <a name="racer">WebGL - Präsentation Formula Student Racer - Hochschule Hof</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="td">
+      Für eine Projektarbeit im Sommersemester 2012 während meines Studiums entstand diese Arbeit.
+      Es handelt sich um ein Konzept-Rennwagen für die <a href="http://hofspannung.de/" target="_blank" class="ext">
+      HofSpannung Hof E.V.</a>, deren Website übrigens auch von <abbr title="Ihn ihrer (noch) ursprünglichen Form">mir designed</abbr> wurde. Das 3D-Model wird mittels WebGL und dem Framework three.js gerendert.
+      <p align="center">
+        <a href="dhtml/webgl_racer/index.html" target="_self">Zum WebGL Racer...</a></p>
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<table class="tbl" width="100%">
+  <tr>
+    <td class="tblbalken"><a name="notizen">Desktop Notizenverwalter</a> (für Active Desktop)</td></tr>
+  <tr>
+    <td class="td">
+      Bei Diesem Projekt handelt es sich um kein einzelnes JavaScript mehr, sondern um ein Konstrukt 
+      vieler JavaScript-Funktionen, die zu einer Art Anwendung zusammen geführt worden.<br>
+      Wie der Titel schon sagt, kann diese "Anwendung" Ihre Notizen verwalten. Sie können dynamisch 
+      Notizzettel anlegen, bearbeiten und löschen. Mit dem Potential, das in der Idee steckt, sind 
+      noch viele weiteren Erweiterungen und Einstellungsmöglichkeiten geplant.<br><br>
+      Es ist zu 100% vorgesehen, diese "Anwendung" offline zu benutzen. Den besten Nutzen erhalten Sie,
+      indem Sie es als Active Desktop Element in Ihre Windows Umgebung einbetten. Aufgrund dieser 
+      Absicht, ist das Programm nur auf dem <b>Internet Explorer</b> nutzbar, weil Windows bekanntlich 
+      auf diesem seit Version 4 aufbaut. (also natürlich auch der Active Desktop)<br>
+      In Windows XP ist die Einrichtung des Active Desktop's etwas versteckt. Eine kurze Navigation:<br>
+      <ul>
+        <li>Rechtsklick auf den Desktop</li>
+        <li>Kontextmenüeintrag <b><i>Eigenschaften</i></b> wählen</li>
+        <li>Auf der Registerkarte <i>Hintergrund</i> den Button <b><i>Desktop anpassen</i></b> anklicken</li>
+        <li>Dort die Registerkarte <b><i>Web</i></b> auswählen</li>
+        <li>Die Kontrolbox <i><b>Webinhalte auf dem Desktop anzeigen</b></i> muss aktiviert sein</li>
+        <li>Auf die Schaltfläche <i><b>Neu</b></i> klicken</li>
+        <li>Mit einem Klick auf <i><b>Durchsuchen</b></i> brauchen Sie nur noch den Pfad der heruntergeladenen Datei anzugeben</li>
+      </ul>
+        Ich möchte nicht unerwähnt lassen, dass viele Ideen und Konzepte zu Problemlösungen von diversen 
+        Seiten und anderen Scripten stammen. Die Links sind in der "Anwendung" zu finden.
+      <p>Ab <b>Version 0.3.0</b> wurde das Script komplett erneuert. Das Hauptfeature 
+        ist die Verwaltung der Notizen mittels einer speziellen Klasse. Hierdurch 
+        ergab sich endlich die M&ouml;glichkeit, die Haltbarkeitszeit f&uuml;r 
+        die Cookies festzulegen. Weiterhin kamen grafische Effekte hinzu, wie 
+        Transparenz und Untermen&uuml;s f&uuml;r das Kontextmen&uuml;, sowie 
+        die Darstellung von 3D-Schatten. Ferner gibt es ein eigenes Kontextmen&uuml; 
+        f&uuml;r die Textbearbeitung mit einigen Formatierungshilfen. </p>
+      <p><b>Version 0.4.0</b> enth&auml;lt neue Features, wie Kalender... <br>
+        Diese Version wird demn&auml;chst verf&uuml;gbar sein.</p>
+      <p>F&uuml;r das Utility ist minimal ein IE5.5 erforderlich. Mit IE6 und IE7 sind
+        weiter Features wie Transparenz und 3D-Schatten verf&uuml;gbar.</p>
+      <p align="center">
+        <a href="dhtml/dtn_0-5.zip">Desktop-Notes herunterladen</a></p>
+    </td>
+  </tr>
+</table>
+<p><a href="dhtml/legacy.html" target="_self" title="Altlasten...">Archiv</a>
+</p>
+</body>
+</html>

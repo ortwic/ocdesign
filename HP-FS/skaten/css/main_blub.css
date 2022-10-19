@@ -1,0 +1,224 @@
+/* ***** Farbschema Schwarz/Blau ***** */
+
+a:link {color:#69F;text-decoration:none;font-weight:bold} 
+a:visited {color:#35B;text-decoration:none;font-weight:bold} 
+a:hover {color:#CCC;text-decoration:none;font-weight: bold}
+a:active {color:#69F;text-decoration:underline;font-weight:bold}
+
+a.ext {background:url(../css/img/arw_blub.gif) no-repeat center left;padding-left:16px}
+
+a.menu:link {color:white;font-weight:bold;text-decoration:none;}
+a.menu:visited {color:white;font-weight:bold;text-decoration:none;}
+a.menu:hover {color:white;text-decoration:none;}
+
+
+body {
+	color:#69F;
+	background-color:#000000;
+    background-image:none;
+	font-family:Arial,Verdana;
+	background-repeat:repeat-y;
+	margin:30px 100px;
+	scrollbar-DarkShadow-Color:#222;
+	scrollbar-Track-Color:#000; scrollbar-Face-Color:#69F;
+	scrollbar-Shadow-Color:#69F; scrollbar-Highlight-Color:#69F;
+	scrollbar-3dLight-Color:#CCC; scrollbar-Arrow-Color:#000; 
+}
+
+body.default { 
+	font-family:Arial;
+	font-size:10pt;
+	background:black;
+	margin:0px;
+}
+
+h1 {
+	color:#CFF;
+	font-size:20pt;
+	font-weight:bold;
+	font-variant:small-caps;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h2 {
+	color:#35B;
+	font-size:16pt;
+	font-weight:bold;
+	border-bottom:solid 6px #69F;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h3 {
+	color:#35B;
+	font-size:12pt;
+	font-weight:normal;
+	font-variant:small-caps;
+	border-bottom:solid 1px #69F;
+	margin-top:12px;
+	margin-bottom:6px;
+}
+
+h4 {
+	color:#35B;
+	font-size:10pt;
+	font-weight:bold;
+	margin-top:-5px;
+	margin-bottom:0px;
+}
+
+h6 { /* Bildbeschriftung */
+    margin:0px;
+    padding:1px;
+    font-size:0.8em;
+    font-style:italic;
+	font-weight:normal;
+    text-indent:4px;
+}
+
+.pic {
+    cursor:pointer;
+    cursor:hand;
+    width:320px;
+    height:240px;
+    border:1px solid gray;
+}
+
+hr {
+	background-color:#69F;
+	height:1px;
+	margin-top:12px;
+	margin-bottom:12px;
+}
+
+ol {
+	color:#35B;
+	font-weight:bold;
+}
+
+ul.arw {
+	list-style-image:url('../css/img/arw_blub.gif'); 
+	margin-left:20px; /* Angabe für IE */
+	padding-left:0px; /* Angabe für FF */
+}
+
+ul.arw li {
+	padding-bottom:0.5em;
+}
+
+ul.dot {
+	list-style-image:url('../css/img/dot_blub.gif');
+	margin-left:20px;
+	padding-left:20px;
+}
+
+ul.dot li {
+	padding-bottom:0.1em;
+}
+
+abbr, acronym {
+	border-bottom:1px dotted gray;
+	cursor:help;
+}
+
+.trenn { 
+	color:#000;
+	margin-top:-6px;
+	font-weight:bold;
+	font-size:x-small;
+	font-variant:normal;
+	text-align:right;
+	background-color:#69F;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+
+.trenn2 {
+	color:#000;
+	font-weight:bold;
+	background-color:#35B;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse
+}
+
+/* *************************** */
+/* ***** Stylesheet Menü ***** */
+
+#menu {
+	position:absolute;
+	left:0px; /* Menüposition links */
+	top:0px;
+	z-index:1;
+	height:20px;
+	text-align:left;
+}
+
+#menu td, div.subMenu td, .subCfgCmd td {
+	cursor:pointer;
+    cursor:hand;
+	width:120px;
+	min-width:120px;
+	height:20px;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:center;
+	white-space:nowrap;
+	padding:0px;
+	color:black;
+	border:solid 1px #000;
+	background-color: #69F;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu {
+	cursor:pointer;
+	visibility:hidden;
+	position:absolute;
+	top:22px;
+	z-index:2;
+	font-size:10pt;
+	font-weight:bold;
+	color:black;
+	text-align:left;
+	overflow:hidden;
+	margin:0px;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu td { 
+	text-align:left;
+	border:solid 1px #000;
+}
+
+#menu .cmdOvr, div.subMenu .subOvr, #subConfig .subOvr {
+	border-color:#DDD #222 #222 #DDD;
+}
+
+#menu .cmdDwn, div.subMenu .subDWn, #subConfig .subDwn  {
+	border-color:#222 #DDD #DDD #222;
+}
+
+/* *************************** */
+/* ****** Config Window ****** */
+
+.cfg {
+	border:1px solid gray;
+	background-color: #000;
+}
+
+#btnCfg {
+    background-image:url(img/cfg_blk.png);
+}

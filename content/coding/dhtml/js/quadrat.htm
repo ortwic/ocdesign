@@ -1,0 +1,53 @@
+<html><head>
+<script language=JavaScript>
+function rechne()
+{
+	var summe=0, feld=1, chk=0;
+
+	while(feld<17){
+	if (eval("this.document.mq.box"+feld+".checked"))
+	{
+		summe+=Number(eval("this.document.mq.box"+feld+".value"));
+		chk++;
+	}
+	feld++;
+	}
+	if (summe==34 && chk==4)
+	this.document.mq.ergebnis.value=summe;
+	else{
+	this.document.mq.ergebnis.value="";
+	alert("Sie dürfen nur horizontale, vertikale\nund diagonale Quersummen nehmen.");}
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../../../def.css">
+</head>
+
+<body>
+<form name=mq><font face=Arial>
+<table border=1 style="border-collapse:collapse;width:200px;height:200px"><tr>
+<td><input type=checkbox value=16 name=box1>16</td>
+<td><input type=checkbox value=3 name=box2>3</td>
+<td><input type=checkbox value=2 name=box3>2</td>
+<td><input type=checkbox value=13 name=box4>13</td>
+</tr><tr>
+<td><input type=checkbox value=5 name=box5>5</td>
+<td><input type=checkbox value=10 name=box6>10</td>
+<td><input type=checkbox value=11 name=box7>11</td>
+<td><input type=checkbox value=8 name=box8>8</td>
+</tr><tr>
+<td><input type=checkbox value=9 name=box9>9</td>
+<td><input type=checkbox value=6 name=box10>6</td>
+<td><input type=checkbox value=7 name=box11>7</td>
+<td><input type=checkbox value=12 name=box12>12</td>
+</tr><tr>
+<td><input type=checkbox value=4 name=box13>4</td>
+<td><input type=checkbox value=15 name=box14>15</td>
+<td><input type=checkbox value=14 name=box15>14</td>
+<td><input type=checkbox value=1 name=box16>1</td>
+</tr></table>
+<br><input type=button value=Berechnen onclick=rechne()>
+<input type=reset value=L&ouml;schen><br>
+<br>Ergebnis: <input type=text name=ergebnis size=2>
+</font></form>
+</body>
+</table>

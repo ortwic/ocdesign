@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<title>SQL</title>
+<link rel="stylesheet" type="text/css" href="../../def.css">
+<script src="../../js/all.js" type="text/javascript"></script>
+</head>
+
+<body>
+SQL (Structured Query Language), standardisiert als ANSI-SQL, ist eine einfache Sprache, die mit einem relativ kleinen, aber m&auml;chtigen Befehlssatz ausgestattet ist. Sie wurde von IBM in den 70er Jahren entwickelt und ist wichtiger Bestandteil von Access. Hier habe ich eine kleine Referenz mit den wichtigsten Befehlen aufgestellt.
+<br>SQL l‰sst sich in 4 Gruppen einteilen:
+<br><br>
+<ul>
+  <li><a href="#DQL">DQL (Data Query Language)</a>
+  <li><a href="#DDL">DDL (Data Definition Language)</a>
+  <li><a href="#DML">DML (Data Manipulation Language)</a>
+  <li><b>DCL (Data Control Language)</b>
+</ul>
+<br>
+F&uuml;r ein paar selbst erzeugte Code-Beispiele klicken Sie <a href="sqlgen.htm">hier</a>, um zu dem Code-Generator zu gelangen.
+<br><br>
+<table class="tbl" width="100%">
+<tr><td class="tblbalken"><a name="DQL">DQL (Data Query Language)</a></td></tr>
+<tr><td class="td">
+<table width="100%">
+<tr><td width="20%">SELECT</td><td width="80%">lieﬂt Datens&auml;tze ein</td><tr>
+<tr><td>TOP XX</td><td>zeigt XX Datens&auml;tze an z. B. TOP 10</td><tr>
+<tr><td>COUNT (*)</td><td>Anzahl der Datens&auml;tze werden gez&auml;hlt</td><tr>
+<tr><td>DISTINCT</td><td>gleiche Feldinhalte werden ausgeblendet (&uuml;ber mehrere Datenfelder)</td><tr>
+<tr><td>FROM XY</td><td>bestimmt die Datenherkunft von der Tabelle XY</td><tr>
+<tr><td>AS XY</td><td>gibt ein berechnetes Feld mit dem Namen XY aus</td><tr>
+<tr><td>WHERE</td><td>danach folgt die zu Erf&uuml;llende Bedingung</td><tr>
+<tr><td>IN</td><td>erm&ouml;glicht mehrere Bedingungen f&uuml; WHERE</td><tr>
+<tr><td>LIKE</td><td>entspricht einem '=' und die Benutzung von Wild-Carts (*;?;#) werden m&ouml;glich</td><tr>
+<tr><td>OR</td><td>verodert mehrere Bedingungen, bei der nur eine erf&uuml;llt sein muss</td><tr>
+<tr><td>AND</td><td>die zusammenh&auml;ngenden Bedingungen m&uuml;ssen erf&uuml;llt sein </td><tr>
+<tr><td>IS NULL</td><td>es werden alle Datenfelder ohne Inhalt gefiltert</td><tr>
+<tr><td>NZ</td><td>ersetzt leere Feldinhalte mit einem beliebigem Wert z. B. NZ(Datenfeldname,'Text')</td><tr>
+<tr><td>IIF<br><br></td><td>Entscheidungsstruktur z. B. IIF(Datenfeldname,'Text1','Text2')<br>
+<font color="red"><b>Funktion nur mit Bool'schem Ja/Nein Feldtyp m&ouml;glich</td><tr>
+<tr><td>GROUP BY</td><td>gleiche Feldinhalte werden ausgeblendet</td><tr>
+<tr><td>ORDER BY</td><td>Feldinhalte werden geordnet</td><tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;- ASC</td><td>Aufsteigende Sortierung</td><tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;- DESC</td><td>Absteigende Sortierung</td><tr>
+<tr><td>UNION</td><td>verkn&uuml;pft 2 DQL-Anweisungen z. B. SELECT... UNION SELECT...</td><tr>
+<tr><td>INNTER JOIN<br><br></td><td>zeigt Datenfelder aus 2 verschiedenen Tabellen an, bei denen Prim&auml;rschl&uuml;ssel und Fremdschl&uuml;ssel gleich sind</td><tr>
+<tr><td>LEFT JOIN</td><td>Es werden alle Datens&auml;tze der ersten Tabelle gezeigt, auch ohne Zugeh&ouml;rigkeit</td><tr>
+<tr><td>RIGHT JOIN</td><td>Es werden alle Datens&auml;tze der zweiten Tabelle gezeigt, auch ohne Zugeh&ouml;rigkeit</td><tr>
+</table>
+</td></tr>
+</table><br>
+
+<table class="tbl" width="100%">
+<tr><td class="tblbalken"><a name="DDL">DDL (Data Definition Language)</a></td></tr>
+<tr><td class="td">
+<table width="100%">
+<tr><td width="20%">CREATE TABLE XY</td><td width="80%">Tabelle XY anlegen z. B. CREATE TABLE Tabelle (Feldname1 Datentyp, Feldname2...)</td><tr>
+<tr><td>CREATE INDEX XY</td><td>definiert einen Index XY</td><tr>
+<tr><td>WITH PRIMARY</td><td>legt einen Prim&auml;rschl&uuml;ssel auf den Index fest</td><tr>
+<tr><td>ALTER TABLE XY</td><td>f&uuml;gt etwas zus&auml;tzlich in Tabelle XY ein</td><tr>
+<tr><td>ADD COLUMN XY</td><td>f&uuml;gt eine zus&auml;tzliche Spalte (Datenfeld) an</td><tr>
+<tr><td>DROP COLUMN XY</td><td>l&ouml;schen der Spalte (Datenfeld) XY</td><tr>
+<tr><td>DROP INDEX XY</td><td>l&ouml;scht den Index XY</td><tr>
+<tr><td>DROP TABLE XY</td><td>l&ouml;scht die Tabelle XY</td><tr>
+</table>
+</td></tr>
+</table><br>
+
+<table class="tbl" width="100%">
+<tr><td class="tblbalken"><a name="DML">DML (Data Manipulation Language)</a></td></tr>
+<tr><td class="td">
+<table width="100%">
+<tr><td width="20%">UPDATE</td><td width="80%">aktualisiert Zeilen aus einer Tabelle</td><tr>
+<tr><td>SET XY</td><td>&auml;ndert alle Datens&auml;tze um die Nachfolgende Rechenoperation</td><tr>
+<tr><td>SELECT ... INTO XY</td><td>importiert Datens&auml;tze in die neue Tabelle XY</td><tr>
+<tr><td>INSERT INTO XY</td><td>importiert in eine vorhande Tabelle XY</td><tr>
+<tr><td>DELETE</td><td>l&ouml;scht einzelne Datens&auml;tze</td><tr>
+</table>
+</td></tr>
+</table><br>
+</body>
+</html>

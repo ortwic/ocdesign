@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>--> SKATING ACCESS <--</title>
+<meta http-equiv="keywords" content="Ortwin, Freestyle, Freeride, Inline, Skaten, Skating, Slalom, Twister, Seba">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="skaten/css/main.css">
+
+<script language="javascript">
+<!--
+    var timer=2000,gSpObj=0;
+
+function fwd()
+{
+    timer-=100;
+
+
+    if(timer>0) {
+        if(timer%1000!=0) gSpObj.innerHTML=timer/1000;
+        else gSpObj.innerHTML=(timer/1000)+".0";
+    }
+    else {
+        window.location.href="skaten/skaten.htm";
+        return 0;
+    }
+
+    window.setTimeout("fwd()", 100);
+
+}
+//-->
+</script>
+</head>
+
+<body>
+<h2>Weiterleitung</h2><br>
+Sie werden in <b><span id="delay">2.1</span> Sekunden</b> weitergeleitet. <p>
+<a href="skaten/skaten.htm">Klicken Sie hier, wenn die Weiterleitung nicht erfolgt.</a>
+
+<script language="javascript">
+<!--
+    gSpObj = document.getElementById("delay");
+
+    fwd();
+
+//-->
+</script>
+<p>
+<textarea style="visibility:hidden">
+</textarea>

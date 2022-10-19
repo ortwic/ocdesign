@@ -1,0 +1,86 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 22:42:49 Jun 15, 2006 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 6:30:01 Mrz 17, 2011.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+body 
+{ 
+font-size: 1em; 
+font-family: Arial; 
+} 
+
+.Title 
+{ 
+font-weight: bold; 
+font-size: 3em; 
+color: #8f8f8f; 
+font-family: Arial; 
+text-align: center; 
+} 
+.SubTitle 
+{ 
+font-weight: bold; 
+font-size: 1em; 
+color: #8f8f8f; 
+font-family: Arial; 
+text-align: center; 
+} 
+.SectionHeader 
+{ 
+font-weight: bold; 
+font-size: 1.1em; 
+color: #8080c0; 
+font-family: Arial; 
+} 
+.SectionSubHeader 
+{ 
+font-weight: bold; 
+font-style: italic; 
+color: #8f8f8f; 
+font-size: 1.1em; 
+} 
+
+.Photobar 
+{ 
+left: 0px; 
+top: 0px; 
+position: absolute; 
+} 
+.BodyText 
+{ 
+left: 210px; 
+top: 10px; 
+position: absolute; 
+} 
+A:link 
+{ 
+color: #ff0000; 
+font-size: 1em; 
+font-weight: bold; 
+font-family: Arial; 
+text-decoration: none; 
+} 
+A:hover 
+{ 
+color: #8080c0; 
+font-size: 1em; 
+font-weight: bold; 
+font-family: Arial; 
+text-decoration: underline; 
+} 
+A:visited 
+{ 
+color: #ff0000; 
+font-size: 1em; 
+font-weight: bold; 
+font-family: Arial; 
+text-decoration: none; 
+} 

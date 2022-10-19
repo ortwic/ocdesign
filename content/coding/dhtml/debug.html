@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Debug Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../def.css">
+<!-- <script src="../../js/debug_standalone.js" type="text/javascript"></script> -->
+<script src="../../js/all.js" type="text/javascript"></script>
+<script src="../../js/common.js" type="text/javascript"></script>
+<script src="../../js/debug.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var someObject = { 
+        car: {
+            color:'red',
+            type:'SUV',
+            wheels:4,
+            hp:150,
+            isRunning: true,
+            drive: function drive(destination) {},
+            stop: function stop() {}
+        },
+        people: ['Max','Hugo','Vicky','Carl']
+    };
+    
+    function addConfig(m) {
+        if(m == 0) println.config( { debug: true, 
+                                     clearOnDblClick: true, 
+                                     overrideAlert: true, 
+                                     groupsNotCollapsed: false,
+                                     groupByObjectType: false, 
+                                     printScriptErrors: true
+                                   }, true );
+        else println.config( { debug: true, 
+                               clearOnDblClick: false, 
+                               overrideAlert: false, 
+                               groupsNotCollapsed: true,
+                               groupByObjectType: true, 
+                               printScriptErrors: false
+                             }, true );
+    }
+    
+    function addStyle() {
+        println.style( { left: '50%', background: 'aliceblue' } ); 
+    }
+    
+    window.onload = function() {
+        addEvent(document.getElementById("input"), "keyup", function (e) {
+            if(e.target.value && e.keyCode == 13) {
+                try {
+                    var t = eval(e.target.value);
+                    if(typeof t == "object") println(e.target.value);
+                    if(t) println(t);
+                    //println(e); // funktioniert net...
+                } catch(ex) {
+                    //println(ex);
+                }
+            }
+        });
+    }
+</script>
+</head>
+
+<body>  
+  <h2>debug.js &mdash; what for?</h2>
+  <p>
+    <ul>
+      <li>For Webapp-development debugging with alert() is not very comfy and might be also annoying.
+      So it would be nice to provide an output-function with very little efford:
+      <div class="code">
+        <pre>
+        &lt;script src="js/debug.js" type="text/javascript"&gt;&lt;/script&gt;
+        </pre>
+      </div>
+      </li>
+      <li>Fast debugging with only one global function: 
+        <pre>
+        > println("some string");
+        > println("some string", true); // replace previous output
+        </pre>
+      </li>
+      <li>
+        <b>Great! Next idea:</b> Why just be able to print text? How about printing an object recursivly 
+        as a tree instead of [object Object]!
+      </li><br>
+      <li>
+        <b>Side benefit:</b> You can print and observe your current settings of your Browser/HTML-Page. <br>
+        So if you forgot the name of a property, why don't print the object and its child instead to look 
+        some reference up. 
+      </li>
+    </ul>
+    <h2>Try it yourself</h2>
+    <pre>
+    1. firstly enable debug   <a href="debug.html?debug">debug.html?debug</a>
+       1a. set config         <a href="javascript:addConfig(0);">println.config({ clearOnDblClick: true, overrideAlert: true }, show)</a> 
+       1b. or this config     <a href="javascript:addConfig(1);">println.config({ clearOnDblClick: false, overrideAlert: false }, show)</a> 
+       1c. append style       <a href="javascript:addStyle();">println.style({ left: "50%", background: 'aliceblue' })</a>
+       
+    2. print some text        <a href="javascript:println('Hello World!')">println('Hello World!')</a>
+       2a. and again          <a href="javascript:println('Some more Text')">println('Some more Text')</a>
+       2b. and once again     <a href="javascript:println('Get outa here!', true)">println('Get outa here!', true)</a>
+       2c. limited...         <a href="javascript:println('Max 3 times', 3)">println('Max 3 times', 3)</a>
+       2d. ...by time         <a href="javascript:println('Limited in time', 0, 2000)">println('Limited in time', 0, 2000)</a>
+       
+    3. print some objects     <a href="javascript:println(someObject)">println(someObject)</a>
+       3a. even your DOM      <a href="javascript:println(window, 1)">println(window, 1)</a>
+       3b. whatever you like  println(<input id="input" type="text" value="Math" style="background:transparent;color:silver;border:0px;font-family:monospace;width:74px">)
+    
+    4. force some error:      <a href="javascript:foo.bar()">foo.bar('does not exist')</a>    
+    
+    If you like you can also use <a href="javascript:alert('Hallo Welt!')">alert()</a>. (You have to override it via config)
+    </pre>
+  </p>
+</body>
+</html>

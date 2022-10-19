@@ -1,0 +1,542 @@
+.overlay___invisible__ {
+  background-color: #666;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+
+.top_draggable, .bottom_draggable {
+	cursor:move;
+}
+
+.status_bar {
+	font-size:12px;
+}
+.status_bar input{
+	font-size:12px;
+}
+
+.wired_frame {
+	display:block;
+	position:absolute;
+	border:1px #000 dashed;
+}
+
+
+
+.overlay_brightHpv4Wdw {
+	background-color:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;
+    filter: blur(2px);
+}
+
+.brightHpv4Wdw_wired_frame {
+	background:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;	
+}
+
+.brightHpv4Wdw_nw {
+	background:transparent url(hpv4design/top-left-bright.png) no-repeat 0 0;			
+	width:25px;
+	height:29px;
+}
+
+.brightHpv4Wdw_n {
+	background:transparent url(hpv4design/top-middle-bright.png) repeat-x 0 0;			
+	height:29px;
+    /* filter: blur(2px); */
+    /* filter: url(blur.svg#gaussian_blur); */
+}
+
+.brightHpv4Wdw_ne {
+	background:transparent url(hpv4design/top-right-bright.png) no-repeat 0 0;			
+	width:25px;	  
+	height:29px;
+}
+
+.brightHpv4Wdw_w {
+	background:transparent url(hpv4design/left-bright.png) repeat-y top left;			
+	width:25px;
+}
+
+.brightHpv4Wdw_e {
+	background:transparent url(hpv4design/right-bright.png) repeat-y top right;			
+	width:25px;	  
+}
+
+.brightHpv4Wdw_sw {
+	background:transparent url(hpv4design/bottom-left-bright.png) no-repeat 0 0;			
+	width:25px;
+	height:25px;
+}
+
+.brightHpv4Wdw_s {
+	background:transparent url(hpv4design/bottom-middle-bright.png) repeat-x 0 0;			
+	height:25px;
+}
+
+.brightHpv4Wdw_se, .brightHpv4Wdw_sizer  {
+	background:transparent url(hpv4design/bottom-right-bright.png) no-repeat 0 0;			
+	width:25px;
+	height:25px;
+}
+
+.brightHpv4Wdw_sizer {
+	cursor:se-resize;	
+}
+
+.brightHpv4Wdw_close {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-close.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:16px;
+	cursor:pointer;
+	z-index:999000;
+}
+.brightHpv4Wdw_close_h {
+	background:transparent url(hpv4design/button-close-h.png) no-repeat 0 0;	
+}
+
+.brightHpv4Wdw_maximize {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-maximize.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:32px;
+	cursor:pointer;
+	z-index:999000;
+}
+.brightHpv4Wdw_maximize_h {
+	background:transparent url(hpv4design/button-maximize-h.png) no-repeat 0 0;
+}
+
+.brightHpv4Wdw_minimize {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-minimize.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:48px;
+	cursor:pointer;
+	z-index:999000;
+}
+.brightHpv4Wdw_minimize_h {
+    background:transparent url(hpv4design/button-minimize-h.png) no-repeat 0 0;
+}
+
+.brightHpv4Wdw_title {
+	float:left;
+	height:14px;
+	font-size:11pt;
+	font-weight:bold;
+	font-family:Arial, sans-serif;
+    font-style:italic;
+    font-variant:small-caps;
+    letter-spacing:2px;
+	text-align:left;
+	margin-top:2px;
+	width:100%;
+	color:#F0B840;
+}
+
+.brightHpv4Wdw_content, .darkHpv4Wdw_content {
+	overflow:hidden;
+	color:#F0B840;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
+	background:#161616;
+    padding:12px 4px 8px 4px;
+	background-color:rgba(22, 22, 22, 0.6);
+}
+
+.brightHpv4Wdw_conTop, .darkHpv4Wdw_conTop {
+	background-color:#161616;
+    height:16px;
+    
+	filter:alpha(opacity=85);
+	-moz-opacity:0.85;
+	opacity:0.85;
+}
+/*
+.brightHpv4Wdw_conTopM, .darkHpv4Wdw_conTopM {
+	background-color:#161616;
+    width:100px;
+    height:4px;
+}
+
+.brightHpv4Wdw_conTopL, .darkHpv4Wdw_conTopL {
+    width:4px;
+    height:4px;
+	background:transparent url(hpv4design/tbl-corner-tl.png) no-repeat 0 0;
+}
+
+.brightHpv4Wdw_conTopR, .darkHpv4Wdw_conTopR {
+    width:4px;
+    height:4px;
+	background:transparent url(hpv4design/tbl-corner-tr.png) no-repeat 0 0;
+}
+*/
+.brightHpv4Wdw_conFoot, .darkHpv4Wdw_conFoot {
+	background:#161616;
+    height:4px;
+    
+	filter:alpha(opacity=85);
+	-moz-opacity:0.85;
+	opacity:0.85;
+}
+
+/* For alert/confirm dialog */
+.brightHpv4Wdw_window {
+	border:1px solid #F00;	
+	background:#FFF;
+	padding:20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+}
+
+.brightHpv4Wdw_message {
+  	font-size:12px;
+	text-align:center;
+	width:100%;
+	padding-bottom:10px;
+}
+
+.brightHpv4Wdw_buttons {
+	text-align:center;
+	width:100%;
+}
+
+.brightHpv4Wdw_buttons input {
+	border:1px solid #999;
+	border-top-color:#CCC;
+	border-left-color:#CCC;
+	padding:2px;
+	background-color:#FFF;
+	color:#333;
+	background-image:url(hpv4design/background_buttons.gif);
+	background-repeat:repeat-x;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.brightHpv4Wdw_progress {
+	float:left;
+	margin:auto;
+	text-align:center;
+	width:100%;
+	height:16px;
+	background:transparent url('hpv4design/spinner.gif') no-repeat center center
+}
+
+/* FOR IE */
+* html .brightHpv4Wdw_nw {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-left-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_n {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-middle-bright.png", sizingMethod="scale");
+}
+
+* html .brightHpv4Wdw_ne {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-right-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_w {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/left-bright.png", sizingMethod="scale");
+}
+
+* html .brightHpv4Wdw_e {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/right-bright.png", sizingMethod="scale");
+}
+
+* html .brightHpv4Wdw_sw {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-left-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_s {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-middle-bright.png", sizingMethod="scale");
+}
+
+* html .brightHpv4Wdw_se, * html .brightHpv4Wdw_sizer {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-right-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_close {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-close-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_minimize {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-minimize-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_maximize {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-maximize-bright.png", sizingMethod="crop");
+}
+
+* html .brightHpv4Wdw_content, * html .darkHpv4Wdw_content {
+	background:#161616;
+}
+
+.overlay_darkHpv4Wdw {
+	background-color:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;
+}
+
+.darkHpv4Wdw_wired_frame {
+	background:#FFF;
+	filter:alpha(opacity=60);
+	-moz-opacity:0.6;
+	opacity:0.6;	
+}
+
+.darkHpv4Wdw_nw {
+	background:transparent url(hpv4design/top-left-dark.png) no-repeat 0 0;			
+	width:25px;
+	height:29px;
+}
+
+.darkHpv4Wdw_n {
+	background:transparent url(hpv4design/top-middle-dark.png) repeat-x 0 0;			
+	height:29px;
+}
+
+.darkHpv4Wdw_ne {
+	background:transparent url(hpv4design/top-right-dark.png) no-repeat 0 0;			
+	width:25px;	  
+	height:29px;
+}
+
+.darkHpv4Wdw_w {
+	background:transparent url(hpv4design/left-dark.png) repeat-y top left;			
+	width:25px;
+}
+
+.darkHpv4Wdw_e {
+	background:transparent url(hpv4design/right-dark.png) repeat-y top right;			
+	width:25px;	  
+}
+
+.darkHpv4Wdw_sw {
+	background:transparent url(hpv4design/bottom-left-dark.png) no-repeat 0 0;			
+	width:25px;
+	height:25px;
+}
+
+.darkHpv4Wdw_s {
+	background:transparent url(hpv4design/bottom-middle-dark.png) repeat-x 0 0;			
+	height:25px;
+}
+
+.darkHpv4Wdw_se, .darkHpv4Wdw_sizer  {
+	background:transparent url(hpv4design/bottom-right-dark.png) no-repeat 0 0;			
+	width:25px;
+	height:25px;
+}
+
+.darkHpv4Wdw_sizer {
+	cursor:se-resize;	
+}
+
+.darkHpv4Wdw_close {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-close.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:16px;
+	cursor:pointer;
+	z-index:999000;
+}
+.darkHpv4Wdw_close_h {
+	background:transparent url(hpv4design/button-close-h.png) no-repeat 0 0;	
+}
+
+.darkHpv4Wdw_maximize {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-maximize.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:32px;
+	cursor:pointer;
+	z-index:999000;
+}
+.darkHpv4Wdw_maximize_h {
+	background:transparent url(hpv4design/button-maximize-h.png) no-repeat 0 0;
+}
+
+.darkHpv4Wdw_minimize {
+	width:16px;
+	height:10px;
+	background:transparent url(hpv4design/button-minimize.png) no-repeat 0 0;			
+	position:absolute;
+	top:13px;
+	right:48px;
+	cursor:pointer;
+	z-index:999000;
+}
+.darkHpv4Wdw_minimize_h {
+    background:transparent url(hpv4design/button-minimize-h.png) no-repeat 0 0;
+}
+
+.darkHpv4Wdw_title {
+	float:left;
+	height:14px;
+	font-size:11pt;
+	font-weight:bold;
+	font-family:Arial, sans-serif;
+    font-style:italic;
+    font-variant:small-caps;
+    letter-spacing:2px;
+	text-align:left;
+	margin-top:2px;
+	width:100%;
+	color:#0C3C5C;
+}
+
+/* For alert/confirm dialog */
+.darkHpv4Wdw_window {
+	border:1px solid #F00;	
+	background:#FFF;
+	padding:20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+}
+
+.darkHpv4Wdw_message {
+  	font-size:12px;
+	text-align:center;
+	width:100%;
+	padding-bottom:10px;
+}
+
+.darkHpv4Wdw_buttons {
+	text-align:center;
+	width:100%;
+}
+
+.darkHpv4Wdw_buttons input {
+	border:1px solid #999;
+	border-top-color:#CCC;
+	border-left-color:#CCC;
+	padding:2px;
+	background-color:#FFF;
+	color:#333;
+	background-image:url(hpv4design/background_buttons.gif);
+	background-repeat:repeat-x;
+	font-family:Verdana, Arial, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.darkHpv4Wdw_progress {
+	float:left;
+	margin:auto;
+	text-align:center;
+	width:100%;
+	height:16px;
+	background:transparent url('hpv4design/spinner.gif') no-repeat center center
+}
+
+/* FOR IE */
+* html .darkHpv4Wdw_nw {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-left-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_n {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-middle-dark.png", sizingMethod="scale");
+}
+
+* html .darkHpv4Wdw_ne {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/top-right-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_w {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/left-dark.png", sizingMethod="scale");
+}
+
+* html .darkHpv4Wdw_e {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/right-dark.png", sizingMethod="scale");
+}
+
+* html .darkHpv4Wdw_sw {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-left-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_s {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-middle-dark.png", sizingMethod="scale");
+}
+
+* html darkHpv4Wdw_se, * html .darkHpv4Wdw_sizer {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/bottom-right-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_close {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-close-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_minimize {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-minimize-dark.png", sizingMethod="crop");
+}
+
+* html .darkHpv4Wdw_maximize {
+	background-color: transparent;
+	/*background-image: none;*/
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/hpv4design/button-maximize-dark.png", sizingMethod="crop");
+}

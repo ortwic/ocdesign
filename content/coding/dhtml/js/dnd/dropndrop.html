@@ -1,0 +1,136 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="dot.css">
+<script type="text/javascript" src="clsDots.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="dragndrop.js"></script>
+</head>
+<body>
+<div id="menu" style="width:240px">
+  <table border="0">
+    <tr>
+      <td colspan="4" style="background:#8AF;height:10px"
+       onmousedown="drgStart(document.getElementById('menu'), this)" onmouseup="drgStop(this)"></td>
+    </tr>
+    <tr>
+        <td style="width:33%">Symbol: </td>
+        <td colspan="2"><input type="text" id="txtSign" value="&bull;" style="text-align:left"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="width:67%">Anzahl der Elemente: </td>
+        <td width="33%"><input type="text" id="txtObjNo" value="12"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="width:67%">Frequenz: </td>
+        <td><input type="text" id="txtObjFrq" value="50"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="width:67%">Zeiteinheit in s*10<sup>-3</sup>: </td>
+        <td><input type="text" id="txtRfshRt" value="20"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="width:67%">Pixel pro Zeiteinheit (10px/m): </td>
+        <td><input type="text" id="txtPxpTu" value="1"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><hr></td>
+    </tr>
+    <tr>
+        <td colspan="2">g-Faktor (g = 9.81 m/s<sup>2</sup>): </td>
+        <td><input type="text" id="txtGF" value="0.5"></td>
+    </tr>
+    <tr>
+        <td colspan="2">Anfangsgeschw. v<sub>0</sub> in m/s: </td>
+        <td><input type="text" id="txtV0" value="80"></td>
+    </tr>
+    <tr>
+        <td colspan="2">Rebounce in %: </td>
+        <td><input type="text" id="txtRbnc" value="80"></td>
+    </tr>
+  </table>
+  <table border="0">
+    <tr>
+        <td width="50%">x<sub>1</sub> = <span id="txtX">0</span> m</td>
+        <td width="50%">y<sub>1</sub> = <span id="txtY">0</span> m</td>
+    </tr>
+    <tr>
+        <td>v<sub>1</sub> = <span id="txtV">0</span> m/s</td>
+        <td>&alpha;<sub>1</sub> = <span id="txtW">0</span> &deg;</td>
+    </tr>
+    <tr>
+      <td colspan="2">t = <span id="txtT">0</span> s</td>      
+    </tr>
+    <tr>
+        <td width="50%"> 
+        <input type="checkbox" id="chkFx" style="border:0;width:auto">
+          Effekt
+        </td>
+        <td width="50%"> 
+        <!--<input type="text" id="inImg" value="basketball.png">-->
+        <input type="checkbox" id="inImg" style="border:0;width:auto" value="basketball.png">
+          Basketball
+        </td>
+    </tr>
+    <tr>
+	  <td width="50%"><button onclick="start()">Start</button></td>
+      <td width="50%"><button onclick="reset()">Stop</button></td>
+    </tr>
+  </table>
+  <span style="font-size:8pt;font-family:fixedsys">
+    Debug<br>
+    <span id="debug" style="width:100%;border-bottom:1px solid gray;margin:2px;">&nbsp;</span>
+  </span>
+</div>
+
+<div id="lin0" class="line" style="left:500px;top:200px;width:200px"
+    onmousedown="drgStart(this)" onmouseup="drgStop(this, 1)">
+</div>
+
+<div id="lin1" class="line" style="left:200px;top:400px;width:300px;"
+    onmousedown="drgStart(this)" onmouseup="drgStop(this, 1)">
+</div>
+
+<script type="text/javascript">
+<!--
+
+// Ausgaben
+var opT = document.getElementById("txtT");
+var opX = document.getElementById("txtX");
+var opY = document.getElementById("txtY");
+var opV = document.getElementById("txtV");
+var opW = document.getElementById("txtW");
+
+var g_wdwW = document.body.clientWidth ? document.body.clientWidth : window.innerWidth;
+var g_wdwH = document.body.clientHeight ? document.body.clientHeight : window.innerHeight;
+
+init();
+
+// Linie 0
+var g_lin0y = parseInt(document.getElementById("lin0").style.top);
+var g_lin0x1 = parseInt(document.getElementById("lin0").style.left);
+var g_lin0x2 = g_lin0x1 + parseInt(document.getElementById("lin0").style.width);
+
+// Linie 1
+var g_lin1y = parseInt(document.getElementById("lin1").style.top);
+var g_lin1x1 = parseInt(document.getElementById("lin1").style.left);
+var g_lin1x2 = g_lin1x1 + parseInt(document.getElementById("lin1").style.width);
+
+function init()
+{
+    var menuObj = document.getElementById("menu").style;
+    var left = -20;
+    menuObj.filter = "alpha(opacity=50)";
+    
+    if(document.body.clientWidth) // Berechnung für IE
+        left += document.body.clientWidth - parseInt(menuObj.width);
+    else // Berechnung für andere Browser
+        left += window.innerWidth - parseInt(menuObj.width);
+    
+    menuObj.top = "20px";
+    menuObj.left = left + "px";
+}
+//-->
+</script>
+</body>
+</html>

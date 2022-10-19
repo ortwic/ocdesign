@@ -1,0 +1,166 @@
+<html>
+<head>
+<style>
+<!--
+a {text-decoration:none;}
+a:link {color:#80ACFF;}    		/* noch nicht besuchte Ziele */
+a:visited {color:#80ACFF;} 		/* besuchte Ziele */
+a:focus {color:#ffc;background:gray;}
+a:hover {color:#000;background:#fffff0;}	   	/* Verweise bei "MouseOver" */
+a:active {color:#2198ff;background:silver;}  		/* Angeklickte Verweise */
+
+::-moz-selection{background:#ffc;color:gray;border:1px solid blue}
+::selection {background:#ffc;color:gray;border:1px solid blue}
+
+body { 
+    color:#80ACFF;
+    font-family:Arial;
+    font-size:10pt;
+    letter-spacing:0px;
+    line-height:120%;
+    margin:16px;
+}
+
+li {
+    list-style:none;
+    white-space:nowrap;
+}
+
+.lev1 {
+    margin:0px;
+    padding-left:8px;
+    font-weight:bold;
+}
+
+.lev2 {
+    margin:0px;
+    padding-left:16px;
+    font-weight:normal;
+}
+
+.lev3 {
+    margin:0px;
+    padding-left:22px;
+    font-weight:normal;
+}
+
+//-->
+</style>
+
+
+</head>
+
+<body>
+
+<ul class="lev1">
+   <li><a href="">Inhaltsverzeichnis</a></li>
+   <li><a href="">Allgemeines</a></li>
+   <ul class="lev2">
+      <li><a href="">allgemeine Anforderungen</a></li>
+      <li><a href="">Dokumentationsanforderung</a></li>
+      <li><a href="">Management von Resourcen</a></li>
+   </ul>
+   <li><a href="">Planung</a></li>
+   <ul class="lev2">
+      <li><a href="">Arbeitsumgebung</a></li>
+      <li><a href="">Infrastruktur</a></li>
+      <li><a href="">Qualitätspolitik</a></li>
+      <li><a href="">Lenkung von Aufzeichnungen</a></li>
+      <li><a href="">Planung der Produktrealisierung</a></li>
+   </ul>
+   <li><a href="">Produktrealisierung</a></li>
+   <ul class="lev2">
+      <li><a href="">Konzepterstellung</a></li>
+      <li><a href="">Beschaffung</a></li>
+      <ul class="lev3">
+         <li><a href="">Beschaffungsprozess</a></li>
+         <li><a href="">Beschaffungsangaben</a></li>
+         <li><a href="">Verifizierung von beschafften Produkten</a></li>
+      </ul>
+      <li><a href="">Entwicklung</a></li>
+      <ul class="lev3">
+         <li><a href="">Entwicklungsplanung</a></li>
+         <li><a href="">Entwicklungseingaben</a></li>
+         <li><a href="">Entwicklungsergebnisse</a></li>
+         <li><a href="">Entwicklungsbewertung</a></li>
+         <li><a href="">Entwicklungsverifizierung</a></li>
+         <li><a href="">Entwicklungsvalidierung</a></li>
+         <li><a href="">Lenkung von Entwicklungsänderungen</a></li>
+      </ul>
+      <li><a href="">Produktion</a></li>
+      <ul class="lev3">
+         <li><a href="">Lenkung der Produktion</a></li>
+         <li><a href="">Validierung der Prozesse zur Produktion</a></li>
+         <li><a href="">Kennzeichnung und Rückverfolgbarkeit</a></li>
+         <li><a href="">Produkterhaltung</a></li>
+         <li><a href="">Produktwartung</a></li>
+      </ul>
+      <li><a href="">Lenkung von Überwachungs- und Messmitteln</a></li>
+   </ul>
+   <li><a href="">Abschluss</a></li>
+</ul>
+
+<script type="text/javascript">
+<!--
+
+genStruct("li");
+//setTitle("a");
+
+function genStruct(tagName)
+{
+    var tagObj, iTag=0, tagLev1=0, tagLev2=0, tagLev3=0;
+
+    // Wenn Tag im Dokument vorhanden
+    if(tagName&&document.getElementsByTagName(tagName)[0])
+    {
+        tagObj=document.getElementsByTagName(tagName);
+
+        // Sooft wie Elemente existieren
+        while(tagObj[iTag])
+        {
+            if(tagObj[iTag].parentNode.className=="lev1")
+            {
+                tagLev1++;
+                tagObj[iTag].innerHTML = tagLev1+".&nbsp;"+tagObj[iTag].innerHTML;
+                tagLev2=tagLev3=0;
+            } 
+            else if(tagObj[iTag].parentNode.className=="lev2")
+            {
+                tagLev2++;
+                tagObj[iTag].innerHTML = tagLev1+"."+tagLev2+"&nbsp;"+tagObj[iTag].innerHTML;
+                tagLev3=0;
+            }
+            else if(tagObj[iTag].parentNode.className=="lev3")
+            {
+                tagLev3++;
+                tagObj[iTag].innerHTML = tagLev1+"."+tagLev2+"."+tagLev3+"&nbsp;"+tagObj[iTag].innerHTML;        
+            }
+            iTag++;
+        }
+        return 1;
+    }
+    return 0;
+}
+
+function setTitle(tagName)
+{
+    var tagObj, iTag=0;
+
+    if(tagName&&document.getElementsByTagName(tagName)[0])
+    {
+        tagObj=document.getElementsByTagName(tagName);
+
+        while(tagObj[iTag])
+        {
+            //tagObj[iTag].title = tagObj[iTag].innerHTML; // geht auch
+            tagObj[iTag].setAttribute("title",tagObj[iTag].innerText);
+            iTag++;
+        }
+        return 1;
+    }
+    return 0;
+}
+//-->
+</script>
+</body>
+</html>

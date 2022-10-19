@@ -1,0 +1,121 @@
+<html>
+<head>
+ <hta:application 
+ id="htaapp"
+ applicationname="Rechner"
+ border="dialog"
+ borderstyle="normal"
+ caption="yes"
+ contextmenu="yes"
+ icon=""
+ innerborder="no"
+ maximizebutton="no"
+ minimizebutton="no"
+ navigable="no"
+ scroll="no"
+ scrollflat="no"
+ selection="no"
+ showintaskbar="yes"
+ singleinstance="yes"
+ sysmenu="yes"
+ version="1.0"
+ windowstate="normal"
+ >
+<title>Rechner</title>
+
+<script language="javascript" type="text/javascript">    
+    //function RestoreWindowSize()
+    //{
+    window.resizeTo(206, 217);
+    //}
+</script>
+
+<style type=text/css>
+#rechner {position: absolute; left: 0px; top: 0px; z-index:1}
+.null {width: 80px; height: 40px; color:#e0a000;background:#404040;font-weight:bold;font-size:16pt}
+.cmd {width: 40px; height: 40px; color:#e0a000;background:#404040; font-weight:bold;font-size:16pt}
+.cmd2 {width: 40px; height: 40px; color:#cccccc;background:#800000;font-weight:bold;font-size:16pt}
+.txt {width: 200px; height: 30px; color:#303B30;background:#627A68;font-size:16pt;font-family:Arial;direction:rtl}
+</style>
+<script language=JavaScript>
+function rechne()
+{
+	var ausgabe;
+	switch (document.forms[0].op.value)
+	{
+	case "+": 
+	ausgabe=Number(document.forms[0].zw.value)+Number(document.forms[0].ergebnis.value);
+	break;
+	case "-": 
+	ausgabe=Number(document.forms[0].zw.value)-Number(document.forms[0].ergebnis.value);
+	break;
+	case "x": 
+	ausgabe=Number(document.forms[0].zw.value)*Number(document.forms[0].ergebnis.value);
+	break;
+	case ":": 
+	ausgabe=Number(document.forms[0].zw.value)/Number(document.forms[0].ergebnis.value);
+	break;
+	case "%": 
+	ausgabe=Number(document.forms[0].zw.value)/Number(document.forms[0].ergebnis.value)*100;
+	ausgabe+="%";
+	}
+	document.forms[0].ergebnis.value=ausgabe;
+}
+function zeige(zahl)
+{
+	if (isNaN(zahl)==false && isNaN(document.forms[0].ergebnis.value)==false)
+		document.forms[0].ergebnis.value+=zahl;
+	else if (zahl==".")
+		document.forms[0].ergebnis.value+=zahl;
+	else if (zahl=="C")
+		document.forms[0].ergebnis.value="";
+	else if (isNaN(zahl)==true)
+	{
+		document.forms[0].zw.value=document.forms[0].ergebnis.value;
+		document.forms[0].op.value=zahl;
+		document.forms[0].ergebnis.value=zahl;
+	}
+	else
+	{
+		document.forms[0].ergebnis.value="";
+		document.forms[0].ergebnis.value=zahl;
+	}
+}
+</script>
+</head>
+
+<body>
+<a href="http://msdn.microsoft.com/en-us/library/ms536496(VS.85).aspx" target="_blank" style="position:absolute;z-index:3;background:white;">
+    .HTA
+</a>
+<div id=rechner><form>
+<table border=0 cellpadding=0 cellspacing=0 width=200 height=190>
+<tr><td colspan=5><input type=text name=ergebnis class=txt readonly>
+<input type=hidden name=op><input type=hidden name=zw></td></tr>
+<tr align=center>
+<td><input type=button value=7 onclick=zeige('7') class=cmd></td>
+<td><input type=button value=8 onclick=zeige('8') class=cmd></td>
+<td><input type=button value=9 onclick=zeige('9') class=cmd></td>
+<td><input type=button value=x onclick=zeige('x') class=cmd></td>
+<td><input type=button value=: onclick=zeige(':') class=cmd></td>
+</tr><tr align=center>
+<td><input type=button value=4 onclick=zeige('4') class=cmd></td>
+<td><input type=button value=5 onclick=zeige('5') class=cmd></td>
+<td><input type=button value=6 onclick=zeige('6') class=cmd></td>
+<td><input type=button value=+ onclick=zeige('+') class=cmd></td>
+<td><input type=button value=- onclick=zeige('-') class=cmd></td>
+</tr><tr align=center>
+<td><input type=button value=1 onclick=zeige('1') class=cmd></td>
+<td><input type=button value=2 onclick=zeige('2') class=cmd></td>
+<td><input type=button value=3 onclick=zeige('3') class=cmd></td>
+<td><input type=button value== onclick=rechne() class=cmd></td>
+<td><input type=button value=% onclick=zeige('%') class=cmd></td>
+</tr><tr align=center>
+<td colspan=2><input type=button value=0 onclick=zeige('0') class=null></td>
+<td><input type=button value=. onclick=zeige('.') class=cmd></td>
+<td><input type=reset value=C class=cmd2></td>
+<td><input type=button value=CE  onclick=zeige('C') class=cmd2></td>
+</tr></table>
+</form></div>
+</body>
+</table>

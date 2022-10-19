@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>--> SKATING ACCESS <-- oOOo --> Freestyle-Skating <--</title>
+<meta http-equiv="keywords" content="Ortwin, Freestyle, Freeride, Inline, Skaten, Skating, Slalom, Twister, Seba, Banana-Setup">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/cfg.css">
+<script src="js/menu.js" type="text/javascript"></script>
+<script src="js/switch.js" type="text/javascript"></script>
+<script src="js/init.js" type="text/javascript"></script>
+</head>
+
+<body class="default" style="overflow:hidden;background-color:buttonface" onload="init()">
+  <div id="menu"> 
+  <table id="tblMenu" style="border:0;width:842px">
+    <tr> 
+      <td title="Zur&uuml;ck" style="width:44px;min-width:44px"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="this.className='cmdOvr'"
+        onclick="history.back()"> 
+        &lt;&lt; 
+      </td>
+      <td title="Vorw&auml;rts" style="width:44px;min-width:44px"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="this.className='cmdOvr'"
+        onclick="history.forward()"> 
+        &gt;&gt; 
+      </td>
+      <td id="link1" 
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[0].shwHideSub(this)"> 
+        Start 
+      </td>
+      <td id="link2"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[1].shwHideSub(this)"> 
+        Bremstechniken 
+      </td>
+      <td id="link3"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[2].shwHideSub(this)"> 
+        Tipps&nbsp;f&uuml;r&nbsp;Tricks 
+      </td>
+      <td id="link4"
+        onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[3].shwHideSub(this)"> 
+        Material 
+      </td>
+      <td id="link5"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[4].shwHideSub(this)"> 
+        &Uuml;ber... 
+      </td>
+      <td id="link6"
+    	onmouseover="this.className='cmdOvr'"
+        onmouseout="this.className='cmdOut'"
+        onmousedown="this.className='cmdDwn'"
+        onmouseup="g_subArray[5].shwHideSub(this)"> 
+        Verweise 
+      </td>
+    </tr>
+  </table>
+  <noscript>
+    <span style="color:white;background:red;font-size:0.7em;font-weight:500;letter-spacing:0.10em;padding:1px 9px">
+    Sie haben JavaScript deaktiviert! Um diese Seite richtig darstellen zu 
+	k&ouml;nnen, muss JavaScript aktiviert sein. Um die Seite denoch anzuzeigen, 
+	klicken Sie <a href="start/karte.htm" target="main" style="color:white;font-weight:bold">hier</a>.
+    </span>
+  </noscript>
+</div>
+
+<div id="subStart" class="subMenu" style="left:96px;height:112px;"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'start/warum.htm')"> 
+        &nbsp;Einleitung </td>
+    </tr>
+    <tr>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'start/training.htm')"> 
+        &nbsp;Training </td>
+    </tr>
+    <tr>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'start/kontakt.php')"> 
+        &nbsp;Kontakt </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'start/karte.htm')"> 
+        &nbsp;Sitemap </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="g_subArray[6].shwHideSub(this)"> 
+        &nbsp;<i>Einstellungen</i></td>
+    </tr>
+  </table>
+</div>
+
+<div id="subBremstechniken" class="subMenu" style="left:220px;height:90px;"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'bremstechniken/rookie.htm')"> 
+        &nbsp;Anf&auml;nger </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'bremstechniken/bergab.htm')"> 
+        &nbsp;Downhill </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'bremstechniken/slides.htm')"> 
+        &nbsp;Slides </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'')"
+	 style="background:silver"> &nbsp;Ungew&ouml;hnlich </td>
+    </tr>
+  </table>
+</div>
+
+<div id="subTricks" class="subMenu" style="left:344px;height:90px;"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'tnt/res.htm')"> 
+        &nbsp;Wie, wo, was?</td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'tnt/sbasics.htm')"> 
+        &nbsp;Slalom Basics</td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'')"
+	 style="background:silver"> &nbsp;</td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'')"
+	 style="background:silver"> &nbsp;</td>
+    </tr>
+  </table>
+</div>
+
+<div id="subMaterial" class="subMenu" style="left:468px;height:90px"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'material/rollen.htm')"> 
+        &nbsp;Rollen </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'material/rsetup.htm')"> 
+        &nbsp;Rollensetup </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'material/klager.htm')"> 
+        &nbsp;Kugellager </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'material/sbandel.htm')">
+        &nbsp;Schn&uuml;rb&auml;ndel </td>
+    </tr>
+  </table>
+</div>
+
+<div id="subAbout" class="subMenu" style="left:592px;height:90px"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'about/me.htm')"> 
+        &nbsp;...mich </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'about/skates.htm')">
+        &nbsp;...meine Skates </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'about/vids.htm')">
+        &nbsp;...Videos von mir </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'about/custom.htm')">
+        &nbsp;...Basteleien </td>
+    </tr>
+  </table>
+</div>
+
+<div id="subLinks" class="subMenu" style="left:716px;height:45px"> 
+  <table border="0">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'verweis/wohin.htm')">
+	&nbsp;Deutschland</td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className='subDfl'" 
+	onmousedown="this.className='subDwn'" onmouseup="showPage(this,'verweis/rest.htm')">
+	&nbsp;Rest der Welt</td>
+    </tr>
+  </table>
+</div>
+		<!-- -------- CONFIG -------- -->
+
+<div id="subConfig" class="cfg" style="width:500px;height:450px;left:160px;top:82px;float:left;"> 
+  <div id="bar" class="cfgbar" onmousedown="drgStart(document.getElementById('subConfig'))" onmouseup="drgStop()"> 
+    <span onmouseover="this.className='xHover'" onmouseout="this.className=''" 
+        onmousedown="this.className='xActive'" onmouseup="g_subArray[6].shwHideSub(this)"> 
+    x&nbsp;</span></div>
+  <h2>Gef&auml;llt Ihnen das Design meiner Seite?</h2>
+  <p>Wenn nicht, kein Problem! Wechseln Sie das Design einfach. Es stehen verschiedene 
+    Schemata zur Auswahl.<br>
+    Damit dieses Script funktioniert, darf kein benutzerdefiniertes CSS aktiviert 
+    sein. Ihr Browser sollte CSS2 unterst&uuml;tzen.</p>
+  <table class="subCfgCmd">
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main.css')"
+        style="color:white;background:#69F"> Blau / Wei&szlig; </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_blub.css')"
+        style="color:#69F;background:#000"> Blau / Schwarz</td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_yellow.css')"
+        style="color:black;background:#FC0"> Gelb / Wei&szlig; </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_yellob.css')"
+    	style="color:#FC0;background:#000"> Gelb / Schwarz </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_red.css')"
+        style="color:white;background:#C00"> Rot / Wei&szlig; </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_pinb.css')"
+        style="color:#F0F;background:#000"> Lila / Schwarz </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_green.css')"
+        style="color:white;background:#181"> Gr&uuml;n / Wei&szlig; </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_greb.css')"
+        style="color:#0F0;background:#000"> Gr&uuml;n / Schwarz </td>
+    </tr>
+    <tr> 
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_snyora.css')"
+        style="color:#FFF;background:#F80"> Sunny Orange </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_orab.css')"
+        style="color:#F80;background:#000"> Black Orange </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_coral.css')"
+        style="color:white;background:#F96"> Koralle </td>
+      <td onmouseover="this.className='subOvr'" onmouseout="this.className=''" 
+        onmousedown="this.className='subDwn'" onmouseup="chgCss(this,'main_sys.css')"
+        style="color:ButtonText;background:ButtonFace"> System </td>
+    </tr>
+  </table>
+  <p>
+    <input id="chkFullWidth" type="checkbox" style="border:1px solid #808080;background:transparent"
+        onclick="g_fWdth=useFullWidth(this.checked)">
+    Inhalt &uuml;ber gesamte Fensterbreite darstellen
+  </p>
+  <h3>Einstellungen speichern</h3>
+  <p>Sie k&ouml;nnen Ihr ausgew&auml;hltes Design f&uuml;r den eingestellten Zeitraum 
+    speichern. </p>
+  <p style="padding-bottom:6pt">
+    <input type="text" id="days" maxlength="3" value="30" style="width:30px;">
+        Tage <a href="#" onclick="setCookie('CSS',g_cssFil+';'+g_fWdth,days.value);this.blur()" 
+        class="ext">speichern</a> </p>
+  <table width="100%">
+    <tr> 
+      <td style="width:34%;text-align:left;vertical-align:middle;"> <a href="http://ortwin.qu.am" target="_blank" class="ext">http://ortwin.qu.am</a> 
+      </td>
+      <td style="width:33%;text-align:center;vertical-align:bottom;"> <img src="images/ohc.png"> 
+      </td>
+      <td style="width:33%;padding-top:20px;text-align:right;vertical-align:bottom;"> 
+        <img src="images/notepad.gif"> </td>
+    </tr>
+  </table>
+</div>
+
+<iframe src="" id="ifMain" src="start/warum.htm" name="main" width="100%" height="100%" frameborder="0">
+</iframe>
+
+</body>
+</html>

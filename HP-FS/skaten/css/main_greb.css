@@ -1,0 +1,224 @@
+/* ***** Farbschema Schwarz/Blau ***** */
+
+a:link {color:#0F0;text-decoration:none;font-weight:bold;border-bottom:1px dashed #EFE} 
+a:visited {color:#0A0;text-decoration:none;font-weight:bold;border-bottom:1px dashed #0F0} 
+a:hover {color:#EFE;text-decoration:none;font-weight: bold;border-bottom:0px}
+a:active {color:#0F0;text-decoration:none;font-weight:bold}
+
+a.ext {background:url(../css/img/arw_greb.gif) no-repeat center left;padding-left:16px}
+
+a.menu:link {color:white;font-weight:bold;text-decoration:none;}
+a.menu:visited {color:white;font-weight:bold;text-decoration:none;}
+a.menu:hover {color:white;text-decoration:none;}
+
+
+body {
+	color:#0F0;
+	background-color:#000000;
+    background-image:none;
+	font-family:Lucida Console,Courier New;
+	background-repeat:repeat-y;
+	margin:30px 100px;
+	scrollbar-DarkShadow-Color:#222;
+	scrollbar-Track-Color:#000; scrollbar-Face-Color:#0F0;
+	scrollbar-Shadow-Color:#0F0; scrollbar-Highlight-Color:#0F0;
+	scrollbar-3dLight-Color:#CFC; scrollbar-Arrow-Color:#000; 
+}
+
+body.default { 
+	font-family:Arial;
+	font-size:10pt;
+	background:black;
+	margin:0px;
+}
+
+h1 {
+	color:#CFC;
+	font-size:20pt;
+	font-weight:bold;
+	font-variant:small-caps;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h2 {
+	color:#CFC;
+	font-size:16pt;
+	font-weight:bold;
+	border-bottom:solid 6px #222;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h3 {
+	color:#4F4;
+	font-size:12pt;
+	font-weight:normal;
+	font-variant:small-caps;
+	border-bottom:solid 1px #222;
+	margin-top:12px;
+	margin-bottom:6px;
+}
+
+h4 {
+	color:#0A0;
+	font-size:10pt;
+	font-weight:bold;
+	margin-top:-5px;
+	margin-bottom:0px;
+}
+
+h6 { /* Bildbeschriftung */
+    margin:0px;
+    padding:1px;
+    font-size:0.8em;
+    font-style:italic;
+	font-weight:normal;
+    text-indent:4px;
+}
+
+.pic {
+    cursor:pointer;
+    cursor:hand;
+    width:320px;
+    height:240px;
+    border:1px solid gray;
+}
+
+hr {
+	background-color:#0F0;
+	height:1px;
+	margin-top:12px;
+	margin-bottom:12px;
+}
+
+ol {
+	color:#0A0;
+	font-weight:bold;
+}
+
+ul.arw {
+	list-style-image:url('../css/img/arw_greb.gif'); 
+	margin-left:20px; /* Angabe für IE */
+	padding-left:0px; /* Angabe für FF */
+}
+
+ul.arw li {
+	padding-bottom:0.5em;
+}
+
+ul.dot {
+	list-style:circle;
+	margin-left:20px;
+	padding-left:20px;
+}
+
+ul.dot li {
+	padding-bottom:0.1em;
+}
+
+abbr, acronym {
+	border-bottom:1px dotted #A8F;
+	cursor:help;
+}
+
+.trenn { 
+	color:#0F0;
+	margin-top:-6px;
+	font-weight:bold;
+	font-size:x-small;
+	font-variant:normal;
+	text-align:right;
+	background-color:#222;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+
+.trenn2 {
+	color:#0F0;
+	font-weight:bold;
+	background-color:#222;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse
+}
+
+/* *************************** */
+/* ***** Stylesheet Menü ***** */
+
+#menu {
+	position:absolute;
+	left:0px; /* Menüposition links */
+	top:0px;
+	z-index:1;
+	height:20px;
+	text-align:left;
+}
+
+#menu td, div.subMenu td, .subCfgCmd td {
+	cursor:pointer;
+    cursor:hand;
+	width:120px;
+	min-width:120px;
+	height:20px;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:center;
+	white-space:nowrap;
+	padding:0px;
+	color:#8F8;
+	border:solid 1px #000;
+	background-color: #222;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu {
+	cursor:pointer;
+	visibility:hidden;
+	position:absolute;
+	top:22px;
+	z-index:2;
+	font-size:10pt;
+	font-weight:bold;
+	color:black;
+	text-align:left;
+	overflow:hidden;
+	margin:0px;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu td { 
+	text-align:left;
+	border:solid 1px #000;
+}
+
+#menu .cmdOvr, div.subMenu .subOvr, #subConfig .subOvr {
+	border-color:#0F0;
+}
+
+#menu .cmdDwn, div.subMenu .subDWn, #subConfig .subDwn  {
+	border-color:#0A0;
+}
+
+/* *************************** */
+/* ****** Config Window ****** */
+
+.cfg {
+	border:1px solid gray;
+	background-color: #010;
+}
+
+#btnCfg {
+    background-image:url(img/cfg_grn.png);
+}

@@ -1,0 +1,336 @@
+<html>
+
+<head>
+<title>World Racing</title>
+<link rel="stylesheet" type="text/css" href="../def.css">
+<script src="../js/all.js" type="text/javascript"></script>
+<style>
+<!--
+.u1
+{background:#FFC000;color:#000080;font-size:16pt;font-weight:600;font-style:italic}
+-->
+</style>
+</head>
+
+<body bgcolor="#00000">
+<p>
+Eine <a href="http://www.kabelverhau.ch/diverses/wr/Car%20Tutorial%20(en)">englische</a> Version dieser Dokumentation ist ebenfalls verf&uuml;gbar.
+Sie wurde von David (<a href="http://www.kabelverhau.ch">http://www.kabelverhau.ch</a>) &uuml;bersetzt.<br><br>
+
+In dieser Dokumentation werde ich erkl&auml;ren, wie die Autos in WorldRacing 
+  aufgebaut sind und was alles beim Erstellen zu beachten ist. Ich gehe <b><u>nicht</u></b> 
+  auf Grundkenntnisse irgendwelcher 3D-Programme ein. Kenntnisse f&uuml;r den 
+  virtuellen Autobau werden vorrausgesetzt.<br>
+Diese Anleitungen werden nur von meinem Wissensstand gest&uuml;tzt. Sollten hier einige Dinge fehlen, bitte ich um eine <br><a href="../email/email.htm">E-Mail</a>. Interesse an neuen Erkenntnissen besteht immer.<br>
+<p>
+<b>Kategorien:<br>
+<ol>
+<li><a href="#1">Bestandteile eines Autos</a></li>
+<li><a href="#2">Aufbau einer Modelldatei (mox)</a></li>
+<li><a href="#3">Aufteilung der Texturen (ptx)</a></li>
+<li><a href="#4">Inhalt der Materialbibliothek (mtl)</a></li>
+<li><a href="#5">Einstellungen in der Konfigurationsdatei (car)</a></li>
+</ol></b>
+
+<br>
+<font class="u1"><a name="1">Bestandteile eines Autos </a></font><img src="img/grad.png" width="100" height="24" align="absbottom">
+<table border="0" width="100%">
+  <tr> 
+    <td colspan="3">Ein Auto in WorldRacing besteht aus mehreren mox-, ptx-, mtl- 
+      und einer car-Datei. Bei den Pfaden gehe ich immer vom Verzeichnis aus, 
+      in dem WR installiert ist. Fett gedruckte Ordner/Dateien sind zwingend erforderlich.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><br>
+      <img src="img/folder.gif"><strong> .\Autos\autoname</strong></i></td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="20%"><b>autoname.mox</b></td>
+    <td>Enthält das Automodell ohne Reifen, Fahrer oder Lenkrad.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><b>autoname.mtl</b></td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td valign="top"><b>autoname_colli.cob</b></td>
+    <td>Ein durchsichtiges Low-Poly Modell, das dem Spiel Informationen &uuml;ber 
+      die Abma&szlig;e des Wagens gibt.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td valign="top">autoname_ldt.mox</td>
+    <td>Enth&auml;lt ein etwas undetailierteres Modell, das bei einer weiteren 
+      Entfernung zum Wagen angezeigt wird. Es steigert die FPS, da Rechenzeit 
+      eingespart wird.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_ldt.mtl</td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_hl.mox</strong></td>
+    <td>Enth&auml;lt das Reifenmodell zum linken Hinterreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_hl.mtl</strong></td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_hr.mox</strong></td>
+    <td>Enth&auml;lt das Reifenmodell zum rechten Hinterreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_hr.mtl</strong></td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_vl.mox</strong></td>
+    <td>Enth&auml;lt das Reifenmodell zum linken Vorderreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_vl.mtl</strong></td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_vr.mox</strong></td>
+    <td>Enth&auml;lt das Reifenmodell zum rechten Vorderreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td><strong>autoname_r_vr.mtl</strong></td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_hl_ldt.mox</td>
+    <td>Enth&auml;lt ein Low-Poly Reifenmodell zum linken Hinterreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_hl_ldt.mtl</td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_hr_ldt.mox</td>
+    <td>Enth&auml;lt ein Low-Poly Reifenmodell zum rechten Hinterreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_hr_ldt.mtl</td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_vl_ldt.mox</td>
+    <td>Enth&auml;lt ein Low-Poly Reifenmodell zum linken Vorderreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_vl_ldt.mtl</td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_vr_ldt.mox</td>
+    <td>Enth&auml;lt ein Low-Poly Reifenmodell zum rechten Vorderreifen.</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>autoname_r_vr_ldt.mtl</td>
+    <td>Beinhaltet die zugeh&ouml;rigen Materialen zur gleichnamigen Modelldatei.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"> <strong>.\Autos\autoname\Textures</strong></i></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan="2">Enth&auml;lt alle Texturen im ptx-Format, die f&uuml;r das 
+      Automodell mit Reifen ben&ouml;tigt werden.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"> .\Autos\autoname\Driver</i></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan="2">Enth&auml;lt alle 10 Fahrermodelle. Diese k&ouml;nnen von 
+      einem anderen Fahrzeug kopiert werden, m&uuml;ssen aber mit dem Autonamen 
+      umbenannt werden. </td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"> .\Autos\autoname\Driver</i>\Textures</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan="2">Beinhaltet alle Texturen f&uuml;r die Fahrer und die f&uuml;r 
+      das Lenkrad, die sie in den H&auml;nden halten.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"> .\Autos\autoname\cpit</i></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan="2">Enth&auml;lt die Dateien f&uuml;r den Innenraum. Sie werden 
+      nur ben&ouml;tigt, wenn man die Innenansicht im Spiel benutzen m&ouml;chte.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"> .\Autos\autoname\cipt\Textures</i></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan="2">Beinhaltet die Texturen zum Innenraum f&uuml;r die Innenansicht.</td>
+  </tr>
+  <tr> 
+    <td colspan="3"><i><img src="img/folder.gif"><strong> .\WR-EditCars\autoname</strong></i></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td valign="top"><b>autoname.car</b></td>
+	<td>Diese Datei enth&auml;lt die physikalischen Eigenschaften und die Koordinaten 
+      der Reifen, Fahrer und Kameras des Autos. Fehlt diese Datei, wird das Auto 
+      in WR nicht angezeigt. </td>
+  </tr>
+</table>
+  <br>
+  <br>
+  <font class="u1"><a name="2">Aufbau einer Modelldatei (mox) </a></font><img src="img/grad.png" width="100" height="24" align="absbottom"> 
+  <br>
+Ein Modell in einer mox-Datei ist aus Polygonen aufgebaut, die durch Verticies 
+(Knotenpunkte) verbunden werden. Es ist wichtig, dass jedes Vertex Bestandteil 
+eines Polygons ist, da ansonsten bei einigen Grafikkarten die Modelle nicht angezeigt 
+werden k&ouml;nnen. Wenn das Modell &uuml;ber das 3ds-Format zum lwo-Format konvertiert 
+werden soll, ben&ouml;tigt jedes Vertex eine eindeutige Texturkoordinate, um scharfe 
+Kanten auf der Oberfl&auml;che zu vermeiden. Allen Polygonen ist eine Surface-ID 
+(Oberfl&auml;chen-ID) zugewiesen, mithilfe dieser die Materialen aus der Materialbibliothek 
+zugewiesen werden k&ouml;nnen. <br>
+<table width="100%"><tr><td width="320"><img src="img/moxbsp.jpg"></td>
+    <td valign="top">Jede dieser nummerierten Oberfl&auml;chen hat ihre eigene 
+      ID. Ihnen wird sp&auml;ter in der Materialbibliothek ihre eigentliche Farbe 
+      und Eigenschaften zugewiesen. Dabei ist es egal, wie verstreut sie sind. 
+      Die R&auml;nder der verschiedenen Surfaces m&uuml;ssen getrennt sein, da 
+      es ansonsten zu Abst&uuml;rzen beim Laden des Modells f&uuml;hrt. So m&uuml;ssen 
+      beispielsweise die Polygone mit der ID 5 von denen der Karosserie mit der 
+      ID 1 komplett unabh&auml;ngig zu bewegen sein. Die SmoothData (Gl&auml;ttungsdaten) 
+      scheinen nicht unterst&uuml;tzt zu werden, dass daher auch diese Fl&auml;chen 
+      an den R&auml;ndern getrennt sein sollten. <br></td></tr>
+  </table>
+  Um das Modell in das ben&ouml;tigte mox-Format zu bekommen, dass WR ben&ouml;tigt, 
+muss es als lwo-Datei vorliegen. Danach kann es mit dem <a href="wr.htm#mtk">MeshToolKit</a> 
+von Krom konvertiert werden. <br>
+  <br>
+  <br>
+  <font class="u1"><a name="3">Aufteilung der Texturen (ptx) </a></font><img src="img/grad.png" width="100" height="24" align="absbottom"> 
+  <br>
+  Die Texturen f&uuml;r WR m&uuml;ssen eine Kantenl&auml;nge von 2<sup>n</sup> 
+  Pixel haben. Alle Elemente, die eine Textur ben&ouml;tigen (Scheinwerfer, R&uuml;cklichter, 
+  Amaturen usw.), sollten eigenst&auml;ndig in einer tga- oder bmp-Datei vorliegen. 
+  Es ist m&ouml;glich, jedem Bild einen Alpha-Kanal zuzuweisen, der die selben 
+  Ma&szlig;e wie die Textur selbst hat. Es gibt vier Einsatzm&ouml;glichkeiten 
+  des Alpha-Kanals, die in der Materialbibliothek festgelegt werden. 
+<ol>
+  <li>Schwarzes wird transparent, Graut&ouml;ne halbtransparent, Wei&szlig;es 
+    wird sichtbar.</li>
+  <li>Schwarzes wird transparent, Graut&ouml;ne halbtransparent, Wei&szlig;es 
+    wird sichtbar. Sichtbares hat einen Glanzeffekt.</li>
+  <li>Schwarzes wird eingef&auml;rbt, Graut&ouml;ne nur teilweise, Wei&szlig;es 
+    beh&auml;lt die Originalfarbe.</li>
+  <li>Schwarzes wird eingef&auml;rbt, Graut&ouml;ne nur teilweise, Wei&szlig;es 
+    beh&auml;lt die Originalfarbe. Originalfarben haben keinen Glanzeffekt.</li>
+</ol>
+Die Dateien im tga- oder bmp Format k&ouml;nnen mit dem <a href="wr.htm#ptx">PTX-Tool</a> 
+von Krom importiert und im ben&ouml;tigten ptx-Format abgespeichert werden.<br><br>
+<font size="+1"><b>Nummernschilder</b></font><br>
+Diese besondere Textur muss in der Materialbibliothek den Texturnamen "noplate.tga" tragen. Empfehlenswert ist auch, unter der Texturoption "Transparency" und der Maskenoption "Exclude" zu w&auml;hlen, damit die Schildr&auml;nder durchsichtig sind.<br>
+Im Ordner <b><i>.\FrontEnd\Daten\Plates</i></b> befinden sich die Nummernschilder im TGA-Format. Damit sie im Spiel optimal positioniert sind, sollten sie zur Probe schon im Editor auf die vorhergesehene Fl&auml;che am Wagen aufgebracht werden.<br>
+  <br>
+  <br>
+  <font class="u1"><a name="4">Inhalt der Materialbibliothek (mtl) </a></font><img src="img/grad.png" width="100" height="24" align="absbottom"> 
+  <br>
+In der Materialbibliothek, die zu jeder mox-Datei geh&ouml;rt, werden die Eigenschaften 
+der verschiedenen Surface-ID's festgehalten. Sie kann mit einem Texteditor oder 
+mit dem <a href="wr.htm#mtk">MeshToolKit</a> bearbeitet werden. 
+<table width="100%" border="0">
+<tr><td valign="top"><img src="img/mtl.gif"></td>
+    <td valign="top"><ol>
+        <li>Dieses Kombinationsfeld erlaubt die Auswahl der Farbe, die man gerade 
+          bearbeiten m&ouml;chte. <br>
+          &quot;Set Colors to Current&quot; &uuml;bernimmt die aktuelle Einstellung 
+          f&uuml;r alle verf&uuml;gbaren Farben. <br>
+          &quot;Set Colors to Default Body Colors&quot; stellt wieder die Standardfarben 
+          her. </li>
+        <li>Mit diesen Schiebereglern l&auml;sst sich der Lack aus den 3 Grundfarben 
+          generieren.</li>
+        <li>Ambient sorgt f&uuml;r die Leuchtkraft des Materials. Diese Einstellung 
+          ist farb&uuml;bergreifend.</li>
+        <li>Die konzentrierte Glanzfarbe l&auml;sst sich hier einstellen. Sie 
+          simuliert die Lichtreflektion des einfallenden Lichts auf die Oberl&auml;che.</li>
+        <li>Die zweite Glanzfarbe umfasst eine gr&ouml;&szlig;ere Auftrittsfl&auml;che.</li>
+        <li>Die St&auml;rke des Environment-Mapping (Reflektion der Umgebung) 
+          l&auml;sst sich farb&uuml;gergreifend regeln.</li>
+        <li>F&uuml;r Glas kann die Transparenz farbunabh&auml;ngig eingestellt 
+          werden.</li>
+        <li>In diesem Feld steht der Dateiname der Textur mit dem suffix tga, 
+          obwohl die Dateien im ptx-Format vorliegen. Wenn keine Textur ben&ouml;tigt 
+          wird, muss trotzdem die Endung .tga angegeben sein.</li>
+        <li>Hier l&auml;sst sich jeweils in u- und v-Richtung einstellen, was 
+          passieren soll, wenn die Texturkoordinaten &uuml;ber den Texturrand 
+          hinausreichen.</li>
+	</ol></td></tr>
+</table>
+<table width="100%" border="0">
+  <tr><td width="141" valign="top"><img src="img/mtl2.gif"><br><br><img src="img/mtl3.gif" align="top"></td>
+  <td valign="top"><ol start="10">
+        <li>Wenn eine Tetxur vorhanden ist, lassen sich hier die Effekte dieser 
+          bestimmen. 
+          <ol start="0">
+            <li>Keine Textur</li>
+            <li>Transparenz</li>
+            <li>Transparenz mit Glanzeffekt</li>
+            <li>Farb&uuml;berdeckung</li>
+            <li>Farb&uuml;berdeckung ohne Glanzeffekt</li>
+          </ol>
+        </li>
+        <li>Mit diesen Optionen l&auml;sst sich der Verwendungszweck des Alpha-Kanals 
+          bestimmen. Bei einigen werden Tiefeninformationen (Sichtbarkeit verdeckter 
+          Objekte) nicht beachtet. 
+          <ol start="0">
+            <li>Verdeckte Objekte werden nicht berechnet</li>
+            <li>Verdeckte Objekte werden berechnet</li>
+            <li>Im Alpha-Kanal als schwarz markierte Objekte werden dargestellt</li>
+            <li>Verdeckte Objekte werden berechnet</li>
+            <li>Verdeckte Objekte werden nicht berechnet</li>
+          </ol>
+        </li>
+      </ol></td>
+  </tr></table>
+  <br>
+  <br>
+  <br>
+  <font class="u1"><a name="5">Einstellungen in der Konfigurationsdatei (car) 
+  </a></font><img src="img/grad.png" width="100" height="24" align="absbottom"> <br>
+Eine Konfigurationsdatei sollte nicht extra erstellt werden, sondern kann von 
+einem anderen Auto kopiert und umbenannt werden. Mit <a href="wr.htm#car">EditCar</a> 
+von Krom kann sie bequem bearbeitet werden. In dieser muss der Name des neuen 
+Autoordners angegeben werden. Soll die Verdeck-Funktion verf&uuml;gbar sein, so 
+muss ein komplett zweites eigenst&auml;ndiges Modell erzeugt werden, und dessen 
+Name im zweiten Feld eingegeben werden. Der Hacken f&uuml;r die Cabrio-Version 
+ist dann zu setzen.<br>
+Damit die Bremslichter funktionieren, muss die richtige Surface-ID angegeben sein. 
+Das ist die Hexzahl + 1 aus der Materialbibliothek des Hauptmodells in dezimaler 
+Form.<br>
+Die Koordinaten der Reifen, Fahrer und Kameras gehen alle vom Fahrzeugachsenkreuz 
+aus. <br>
+</body>
+</html>

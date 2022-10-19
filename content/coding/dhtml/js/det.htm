@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>Berechnung von Determinanten</title>
+<style type="text/css">
+body
+{
+    color:#C0C0C0;
+    font-family:Arial, Verdana;
+}
+textarea
+{
+    color:#0080FF;
+    background-color:#000000;
+    border-width:0 2px;
+    border-style:solid;
+    border-color:#808080;
+    width:60px;
+    height:54px;
+    font-size:12pt;
+    text-align:center;
+    vertical-align:middle;
+    overflow:hidden;
+}
+.txt
+{
+    color:#0080FF;
+    background-color:#000000;
+    border-width:0 0 3px 0;
+    border-style:double;
+    border-color:#0080FF;
+    text-align:center;
+
+}
+
+#debug
+{
+    position: absolute;
+    top:0px;
+    right:0px;
+    width:auto;
+    height:100%;
+    overflow:auto;
+}
+</style>
+<script language=JavaScript>
+function calc()
+{
+	var summe=0;
+
+    var detA = new Array();
+    var detTxt = document.getElementById("detA").value;
+    // Determinante in Zeilen zerlegen
+    var detRow = detTxt.split("\n");
+    
+    //  Determinante in Werte zerlegen
+    for(var i=0; i<detRow.length; i++)
+    {
+        detA[i] = detRow[i].split(" ");
+        // Prüfe, ob jede Zeile soviele Einträge wie Spalten hat
+        if(detRow.length != detA[i].length)
+        {
+            alert("Das ist keine n x n Matrix.");
+            return 0;
+        }
+        // Prüfe, ob gültige Zahlen enthalten
+        for(var j=0; j<detA[i].length; j++)
+        {
+            if(isNaN(detA[i][j]))
+            {   
+                alert("Bitte nur Zahlen verwenden.");
+                return 0;
+            }
+        }
+    }
+    
+    // Debug
+    gDebug.innerHTML = "";
+    
+    // Berechnetes Ergebnis ausgeben
+    document.getElementById("erg").innerHTML = calcDet(detA);
+}
+    
+// Determinante berechnen
+function calcDet(detA)
+{
+    var erg=0, detANeu;
+
+    if(detA[0].length>1) // Solange Determinante >= 2x2
+    {
+        for(var i=0; i<detA[0].length; i++) // Nach erster Zeile entwickeln
+        {
+            // Determinante um eine Dimension verkleinern
+            detANeu = min2DA(detA, 0, i)
+
+            // Determinante nach 1. Zeile entwickeln
+            x = detA[0][i] * Math.pow((-1),i) * calcDet(detANeu);
+            erg += x;
+            
+            // Debug
+            l = detA[0].length;
+            if(gChkDebug.checked) gDebug.innerHTML += l +". Level: a<sub>"+ i + "," + 0 + "</sub> => " + detA[0][i] + " * <textarea style='width:" + 20*(l) + "px;height:" + 18*(l-1) + "px'>" + detANeu.join('\n') + "</textarea> = " + x + "<br>";
+        }
+    }
+    else
+    {
+        erg = detA[0][0];
+    }
+    return erg;
+}
+
+// 2D-Array verkleinern
+function min2DA(inA, col, row) 
+{
+    outA = new Array();
+    var k,l;
+    
+    for(var i=0; i<inA.length-1; i++)
+    {
+        (i<col) ? k=i : k=i+1; // Wenn Zeile erreicht, überspringen
+        outA[i] = new Array();
+        
+        for(var j=0; j<inA[k].length-1; j++)
+        {
+            (j<row) ? l=j : l=j+1; // Wenn Spalte erreicht, überspringen
+            outA[i][j] = inA[k][l];
+        }
+    }
+    
+    return outA;
+}
+
+function changeSize(src)
+{
+    /*var val = src.value.split("\n");
+    var cols = val.length;
+    var rows = val[0].length;
+    */
+    // oder auch für alle Zeilen
+    var val = src.value;
+    var cols = val.split("\n").length;
+    var rows = Math.ceil(val.length / cols); // Wert aufrunden
+    
+    
+    src.style.height = 18 * cols + "px";
+    src.style.width = 18 * rows + "px";
+
+    if(gChkDebug.checked) gDebug.innerHTML = cols + "; " + rows + "<br>" + src.style.width + "; " + src.style.height;
+}
+</script>
+</head>
+
+<body>
+<h1 style="margin-bottom:0">Determinanten berechnen</h1>
+(nach Laplaceschem Entwicklungssatz, mehr oder weniger)<br><br>
+
+<form name=mq>
+  <table border="0">
+    <tr>
+      <td>
+        det A =
+      </td>
+      <td>
+        <textarea id="detA" onkeyup="changeSize(this)">
+1 2 3
+4 5 6
+7 8 9</textarea>
+        <br><br>
+      </td>
+      <td> = <span class="txt" id="erg"></span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" value="Berechnen" onclick="calc()">
+        <input type="reset" value="L&ouml;schen" onclick="changeSize(document.getElementById('detA')">
+      </td>
+      <td>
+        <input type="checkbox" id="chkDebug">Debug
+      </td>
+    </tr>
+  </table>
+</form>
+<div id="debug"></div>
+<script language=JavaScript>
+var gDebug = document.getElementById("debug");
+var gChkDebug = document.getElementById("chkDebug");
+
+changeSize(document.getElementById('detA'));
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<title>SQL</title>
+<link rel="stylesheet" type="text/css" href="../../def.css">
+<script src="../../js/all.js" type="text/javascript"></script>
+<script language="JavaScript">
+<!--
+function create()
+{
+for(i=0;i<5;i++) {
+if (i==4) {
+	alert("Bitte 1. Operation ausw‰hlen!");
+	return 0;}
+if (document.eingabe.radtbl[i].status) break;
+}
+
+varName=document.eingabe.txttblname.value;
+if (varName=="") {
+	alert("Bitte Tabellenname eingeben!");
+	return 0; 
+}
+
+switch (i) {
+case 0:
+	if (document.eingabe.txtDF2.value=="") {
+		alert("Bitte Datenfelder eingeben!");
+		return 0; }
+	else
+		varDF=" ("+document.eingabe.txtDF2.value+")";
+	document.eingabe.txtAusgabe.value="CREATE TABLE "+varName+varDF;
+	break;
+case 1:
+	varDF=document.eingabe.txtDF.value; 
+	if (varDF=="") {
+		alert("Bitte Datenfelder eingeben!");
+		return 0; }
+	if (document.eingabe.txtWhere.value!=""&&document.eingabe.txtLike.value!="")
+		varWhere=" WHERE "+document.eingabe.txtWhere.value+" LIKE "+document.eingabe.txtLike.value;
+	else
+		varWhere="";
+	if (document.eingabe.txtFilter.value!="")
+		varFilter=" GROUP BY "+document.eingabe.txtFilter.value;
+	else
+		varFilter="";
+	if (document.eingabe.txtOrder.value!="") {
+		for(j=0;j<3;j++)
+			if (document.eingabe.radOrder[j].status) break;
+		if (j==0) varAsc=" ASC ";
+		else if (j==1) varAsc=" DESC ";
+		else varAsc="";
+		varOrder=" ORDER BY "+document.eingabe.txtOrder.value+varAsc;
+	} else
+		varOrder="";
+	document.eingabe.txtAusgabe.value="SELECT "+varDF+" FROM "+varName+varWhere+varFilter+varOrder;
+	break;
+case 2:
+	varDF=document.eingabe.txtDF2.value; 
+	if (varDF=="") {
+		alert("Bitte Datenfelder eingeben!");
+		return 0; }
+	document.eingabe.txtAusgabe.value="ALTER TABLE "+varName+" ADD COLUMN "+varDF;
+	break;
+case 3:
+	document.eingabe.txtAusgabe.value="DROP TABLE "+varName;
+	break;
+}
+}
+
+function show(what)
+{
+switch (what) {
+case 0:
+	document.all["DFs"].style.display="none";
+	document.all["DFs2"].style.display="none";
+	document.all["CBs"].style.display="none";
+	document.all["where"].style.display="none";
+	document.eingabe.chkWhere.status=false;
+	document.all["group"].style.display="none";
+	document.eingabe.chkGroup.status=false;
+	document.all["order"].style.display="none";
+	document.eingabe.chkOrder.status=false;
+	break;
+case 1:
+	document.all["DFs"].style.display="block";
+	document.all["DFs2"].style.display="none";
+	document.all["CBs"].style.display="block";
+	break;
+case 2:
+	document.all["DFs"].style.display="none";
+	document.all["DFs2"].style.display="block";
+	document.all["CBs"].style.display="none";
+	document.all["where"].style.display="none";
+	document.eingabe.chkWhere.status=false;
+	document.all["group"].style.display="none";
+	document.eingabe.chkGroup.status=false;
+	document.all["order"].style.display="none";
+	document.eingabe.chkOrder.status=false;
+	break;
+case 4:
+	if (document.eingabe.chkWhere.status)
+		document.all["where"].style.display="block";
+	else {
+		document.all["where"].style.display="none";
+		document.eingabe.txtWhere.value="";
+		document.eingabe.txtLike.value="";}
+	break;
+case 5: 
+	if (document.eingabe.chkGroup.status)
+		document.all["group"].style.display="block";
+	else {
+		document.all["group"].style.display="none";
+		document.eingabe.txtFilter.value="";}
+	break;
+case 6:
+	if (document.eingabe.chkOrder.status)
+		document.all["order"].style.display="block";
+	else {
+		document.all["order"].style.display="none";
+		document.eingabe.txtOrder.value="";}
+	break;
+}
+}
+
+function addDF()
+{
+varSize="";
+if (document.eingabe.txtDF2.value!=""&&document.eingabe.txtName.value!="")
+	varName=","+document.eingabe.txtName.value;
+else
+	varName=document.eingabe.txtName.value;
+if (varName=="") {
+	alert("Bitte Datenfeldnamen eingeben!");
+	return 0; }
+varDT=document.eingabe.lstDT.value;
+if (varDT=="TEXT") varSize="("+document.eingabe.txtSize.value+")";
+document.eingabe.txtDF2.value+=varName+" "+varDT+varSize;
+}
+
+function clr()
+{
+jn=confirm("Alle Feldinhalte wirklich Lˆschen?");
+if (jn==true) {
+	document.all["DFs"].style.display="none";
+	document.all["DFs2"].style.display="none";
+	document.all["CBs"].style.display="none";
+	document.all["where"].style.display="none";
+	document.all["group"].style.display="none";
+	document.all["order"].style.display="none";
+	return true; }
+else return false;
+}
+-->
+</script>
+</head>
+
+<body>
+Sie sehen hier den von mir programmierten kleinen Code-Generator f&uuml;r SQL. Aufgrund der M&ouml;glichkeiten die SQL bietet, habe ich mich hier nur auf einige Grundfunktionen beschr&auml;nkt.<br>Weitere SQL-Beispiele finden Sie in meinen <a href="vba.htm">Access-Datenbanken</a>.<br><br>
+<form name="eingabe">
+<table width="100%" border="0"><tr valign="top">
+<td width="50%">
+<b>Was m&ouml;chten Sie tun?</b><br><br>
+<input type="radio" name="radtbl" class="rad" onclick="show(2)"> Tabelle erzeugen<br>
+<input type="radio" name="radtbl" class="rad" onclick="show(1)"> Datens&auml;tze auslesen<br>
+<input type="radio" name="radtbl" class="rad" onclick="show(2)"> Datenfelder hinzuf&uuml;gen<br>
+<input type="radio" name="radtbl" class="rad" onclick="show(0)"> Tabelle l&ouml;schen<br>
+<br>
+</td>
+<td width="50%">
+<b>Wie soll Ihre Tabelle heiﬂen?</b><br><br>
+<input type="text" name="txttblname" class="txt" style="width:100%">
+<div id="CBs" style="display:none">
+<input type="checkbox" name="chkWhere" onclick="show(4)"> Datens&auml;tze m&uuml;ssen Bedingungen erf&uuml;llen<br>
+<input type="checkbox" name="chkGroup" onclick="show(5)"> Mehrfache Datens&auml;tze filtern<br>
+<input type="checkbox" name="chkOrder" onclick="show(6)"> Datens&auml;tze sortieren<br>
+</div>
+</td></tr></table>
+
+<div id="DFs" style="display:none">
+<b>Welche Datenfelder sollen aus Ihrer Tabelle angezeigt werden?</b> (mehrere durch Komma trennen)<br><br>
+<textarea name="txtDF" class="txt" rows="4" style="width:100%"></textarea><br><br>
+</div>
+<div id="where" style="display:none">
+<b>Welche Bedingungen sollen die Datens&auml;tze erf&uuml;llen?</b><br><br>
+<table width="100%" border="0" cellspacing="0">
+<tr><td width="50%">Datenfeld: </td><td width="50%">Bedingung: </td></tr>
+<tr><td><input type="text" name="txtWhere" class="txt" style="width:100%"></td>
+<td><input type="text" name="txtLike" class="txt" style="width:100%"></td></tr></table><br>
+</div>
+<div id="group" style="display:none">
+<b>Aus welchem Datenfeld sollen mehrfach vorhandene Datens&auml;tze herausgefiltert werden?</b><br><br>
+<input type="text" name="txtFilter" class="txt" style="width:100%"><br><br>
+</div>
+<div id="order" style="display:none">
+<b>Nach welchem Datenfeld sollen die Datens&auml;tze sortiert werden?</b><br><br>
+<input type="text" name="txtOrder" class="txt" style="width:70%">
+<input type="radio" name="radOrder" class="rad" checked> Aufsteigend 
+<input type="radio" name="radOrder" class="rad"> Absteigend <br><br>
+</div>
+
+<div id="DFs2" style="display:none"><b>Welche Datenfelder sollen Ihrer Tabelle hinzugef&uuml;gt werden?</b><br><br>
+<table width="100%" border="0" cellspacing="0">
+<tr><td width="40%">Name:</td><td width="30%">Datentyp:</td><td width="30%">Feldgr&ouml;ﬂe (bei Text):</td></tr>
+<tr><td><input type="text" name="txtName" class="txt" style="width:100%"></td>
+<td><select name="lstDT" class="list" style="width:100%">
+<option value="TEXT">Text
+<option value="LONG TEXT">Memo
+<option value="INTEGER">ganze Zahlen
+<option value="DOUBLE">Gleitkommazahlen
+<option value="DATETIME">Datum
+<option value="CURRENCY">W&auml;hrung
+<option value="COUNTER">ID (Autowert)
+<option value="BIT">Ja/Nein
+</select></td>
+<td><input type="text" name="txtSize" class="txt" style="width:100%"></td></tr>
+<tr><td><input type="button" value="Datenfeld hinzuf&uuml;gen" class="cmd" onclick="addDF()" style="width:60%"></td></tr>
+<tr><td colspan="3"><textarea name="txtDF2" class="txt" rows="4" style="width:100%" readonly></textarea></td></tr>
+</table>
+<br>
+</div>
+
+<br>
+<input type="button" value="SQL-Code erzeugen" class="cmd" onclick="create()" style="width:200px">
+<input type="reset" value="Feldinhalte L&ouml;schen" class="cmd" onclick="return clr()" style="width:200px">
+<br><br><input type="text" name="txtAusgabe" class="txt" style="width:100%" readonly>
+</form>
+</body>
+</html>

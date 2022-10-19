@@ -1,0 +1,57 @@
+/* ****** Config Window ****** */
+
+#subConfig {
+	position:absolute;
+	z-index:10;
+
+	cursor:default;
+	visibility:hidden;
+	overflow:hidden;
+	padding:20px;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9; 
+}
+
+#bar {
+	margin:-20px -20px -10px -20px;
+	padding-bottom:2px;
+	font-size:1.0em;
+	font-weight:bold;
+	text-align:right;
+	color:black;
+	background:gray;
+}
+
+.xHover {
+	color:silver;
+	cursor:pointer;
+	cursor:hand;
+}
+
+.xActive {
+	color:white;
+}
+
+#days {
+	cursor:auto;
+	text-align:center;
+	color:gray;
+	border:1px solid gray;
+	background:transparent;	
+}
+
+/* ****** Navigation ****** */
+
+#nav {
+	position:absolute;
+	left:2px;
+	top:2px;
+	padding:1px;
+	z-index:2;
+	width:94px;
+	height:16px;
+	text-align:center;
+}

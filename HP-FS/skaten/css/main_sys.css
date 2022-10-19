@@ -1,0 +1,225 @@
+/* ***** Farbschema Schwarz/Blau ***** */
+
+a:link {color:ButtonFace;text-decoration:none;font-weight:bold} 
+a:visited {color:ButtonShadow;text-decoration:none;font-weight:bold} 
+a:hover {color:ButtonHighlight;text-decoration:none;font-weight: bold}
+a:active {color:HighlightText;background-color:Highlight;text-decoration:none;font-weight:bold}
+
+a.ext {background:url(../css/img/arw_sys.gif) no-repeat center left;padding-left:16px}
+
+a.menu:link {color:white;font-weight:bold;text-decoration:none;}
+a.menu:visited {color:white;font-weight:bold;text-decoration:none;}
+a.menu:hover {color:white;text-decoration:none;}
+
+
+body {
+	background-color:#FFFFFF;
+	color:WindowText;
+	background-color:Window;
+    background-image:none;
+	font-family:Tahoma,Arial;
+	background-repeat:repeat-y;
+	margin:30px 100px;
+	scrollbar-DarkShadow-Color:ThreeDDarkShadow;
+	scrollbar-Track-Color:Scrollbar; scrollbar-Face-Color:ThreeDFace;
+	scrollbar-Shadow-Color:ThreeDFace; scrollbar-Highlight-Color:ThreeDFace;
+	scrollbar-3dLight-Color:ThreeDHighlight; scrollbar-Arrow-Color:ButtonText; 
+}
+
+body.default { 
+	font-family:Arial;
+	font-size:10pt;
+	background:Window;
+	margin:0px;
+}
+
+h1 {
+	color:ActiveBorder;
+	font-size:20pt;
+	font-weight:bold;
+	font-variant:small-caps;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h2 {
+	color:ButtonFace;
+	font-size:16pt;
+	font-weight:bold;
+	border-bottom:solid 6px ActiveCaption;
+	margin-top:24px;
+	margin-bottom:6px;
+}
+
+h3 {
+	color:ButtonFace;
+	font-size:12pt;
+	font-weight:normal;
+	font-variant:small-caps;
+	border-bottom:solid 1px ActiveCaption;
+	margin-top:12px;
+	margin-bottom:6px;
+}
+
+h4 {
+	color:ButtonFace;
+	font-size:10pt;
+	font-weight:bold;
+	margin-top:-5px;
+	margin-bottom:0px;
+}
+
+h6 { /* Bildbeschriftung */
+    margin:0px;
+    padding:1px;
+    font-size:0.8em;
+    font-style:italic;
+	font-weight:normal;
+    text-indent:4px;
+}
+
+.pic {
+    cursor:pointer;
+    cursor:hand;
+    width:320px;
+    height:240px;
+    border:1px solid gray;
+}
+
+hr {
+	background-color:ActiveBorder;
+	height:1px;
+	margin-top:12px;
+	margin-bottom:12px;
+}
+
+ol {
+	color:WindowText;
+	font-weight:bold;
+}
+
+ul.arw {
+	list-style-image:url(''); 
+	margin-left:20px; /* Angabe für IE */
+	padding-left:0px; /* Angabe für FF */
+}
+
+ul.arw li {
+	padding-bottom:0.5em;
+}
+
+ul.dot {
+	list-style-image:url('');
+	margin-left:20px;
+	padding-left:20px;
+}
+
+ul.dot li {
+	padding-bottom:0.1em;
+}
+
+abbr, acronym {
+	border-bottom:1px dotted Background;
+	cursor:help;
+}
+
+.trenn { 
+	color:CaptionText;
+	margin-top:-6px;
+	font-weight:bold;
+	font-size:x-small;
+	font-variant:normal;
+	text-align:right;
+	background-color:ActiveCaption;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+
+.trenn2 {
+	color:CaptionText;
+	font-weight:bold;
+	background-color:#35B;
+	border-width:0px;
+	width:100%;
+	border-spacing:0px;
+	border-collapse:collapse
+}
+
+/* *************************** */
+/* ***** Stylesheet Menü ***** */
+
+#menu {
+	position:absolute;
+	left:0px; /* Menüposition links */
+	top:0px;
+	z-index:1;
+	height:20px;
+	text-align:left;
+}
+
+#menu td, div.subMenu td, .subCfgCmd td {
+	cursor:pointer;
+    cursor:hand;
+	width:120px;
+	min-width:120px;
+	height:20px;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:center;
+	white-space:nowrap;
+	padding:0px;
+	color:MenuText;
+	border:solid 1px ButtonFace;
+	background-color: Menu;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu {
+	cursor:pointer;
+	visibility:hidden;
+	position:absolute;
+	top:22px;
+	z-index:2;
+	font-size:10pt;
+	font-weight:bold;
+	color:MenuText;
+	text-align:left;
+	overflow:hidden;
+	margin:0px;
+
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	khtml-opacity:0.9;
+	opacity:0.9;
+}
+
+div.subMenu td { 
+	text-align:left;
+	border:solid 1px ButtonFace;
+}
+
+#menu .cmdOvr, div.subMenu .subOvr, #subConfig .subOvr {
+	border-color:ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+}
+
+#menu .cmdDwn, div.subMenu .subDWn, #subConfig .subDwn  {
+	border-color:ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+}
+
+/* *************************** */
+/* ****** Config Window ****** */
+
+.cfg {
+	border:1px solid gray;
+	background-color: #FFF;
+}
+
+#btnCfg {
+    background-image:url(img/cfg_blk.png);
+}
