@@ -1,0 +1,3 @@
+[submodule "common.js"]
+	path = content/js
+	url = https://github.com/ortwic/common.js.git
